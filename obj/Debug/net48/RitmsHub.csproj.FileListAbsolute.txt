@@ -284,3 +284,4 @@ C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\obj\Debug\net48\RitmsHub.
 C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\obj\Debug\net48\RitmsHub.csproj.Up2Date
 C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\obj\Debug\net48\RitmsHub.exe
 C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\obj\Debug\net48\RitmsHub.pdb
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\obj\Debug\net48\RitmsHub.sourcelink.json

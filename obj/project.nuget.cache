@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iNWJhKsu+D22GlmAJe6LnfjwTiQDP0P/siUJXE9LVGtG6VcBE+qrzpEWzKXnnllkZB2LmGT1yLSQwlCOdaz7Iw==",
+  "dgSpecHash": "d1NNZTXQJHFj8K7sNlcshp9fLFEC5W/AagvaVW4rtd/Jfw1oowOqv6H1zY6D+B31FKo1GKcRfmFX/DaW1vipKw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Filipe.cacho\\Documents\\MY  CODE\\Ritms Console\\RitmsHub.csproj",
+  "projectFilePath": "C:\\Users\\Filipe.cacho\\Documents\\MY  CODE\\RitmsHub\\RitmsHub.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Filipe.cacho\\.nuget\\packages\\closedxml\\0.102.3\\closedxml.0.102.3.nupkg.sha512",
     "C:\\Users\\Filipe.cacho\\.nuget\\packages\\documentformat.openxml\\2.16.0\\documentformat.openxml.2.16.0.nupkg.sha512",

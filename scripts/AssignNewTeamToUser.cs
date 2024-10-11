@@ -35,15 +35,12 @@ namespace RitmsHub.Scripts
                 await ConnectToCrmAsync();
                 CreateEquipoContrataMapping();
                 return await AssignUsersToParksAsync();
-
             }
             catch (Exception ex)
             {
                 DynamicsCrmUtility.LogMessage($"An error occurred in ProcessUsersAsync: {ex.Message}", "ERROR");
                 throw;
             }
-
-
         }
 
         private void ConfigureSecurityProtocol()
@@ -60,7 +57,6 @@ namespace RitmsHub.Scripts
 
                 var serviceClient = DynamicsCrmUtility.CreateCrmServiceClient();
                 this.service = serviceClient;
-                //DynamicsCrmUtility.LogMessage($"Connected successfully to {serviceClient.ConnectedOrgUniqueName}");
             }
             catch (Exception ex)
             {
@@ -115,7 +111,7 @@ namespace RitmsHub.Scripts
                     }
                     else
                     {
-                        DynamicsCrmUtility.LogMessage($"User {userDomain} skipped for park {buUserDomain.NewCreatedPark}. Check previous warnings for details.", "WARNING");
+                        DynamicsCrmUtility.LogMessage($"User {userDomain} could not be processed for park {buUserDomain.NewCreatedPark}. Check previous errors for details.", "WARNING");
                     }
                 }
             }
@@ -128,28 +124,28 @@ namespace RitmsHub.Scripts
             return processedUsers;
         }
 
-        public static string FindContrataContrataTeam(string input)
+        //find equipo dados maestros
+        public static string FindParkMasterDataTeam(string input)
         {
-            int lastContrataIndex = input.LastIndexOf("Contrata", StringComparison.Ordinal);
-
-            if (lastContrataIndex == -1)
+            string lowercaseInput = input.ToLower();
+            int firstContrataIndex = lowercaseInput.IndexOf("contrata");
+            if (firstContrataIndex == -1)
             {
-                return input;
+                return input.Trim();
             }
 
-            int lastSpaceIndex = input.LastIndexOf(" ", lastContrataIndex, StringComparison.Ordinal);
-
-            if (lastSpaceIndex == -1)
+            int secondContrataIndex = lowercaseInput.IndexOf("contrata", firstContrataIndex + 1);
+            if (secondContrataIndex == -1)
             {
-                return input;
+                return input.Trim();
             }
 
-            return input.Substring(0, lastContrataIndex + "Contrata".Length);
+            return input.Substring(0, secondContrataIndex).Trim();
         }
 
         private async Task<bool> AssignUserToTeamAsync(string userDomain, string equipoContrata)
         {
-            string contrataContrataTeam = FindContrataContrataTeam(equipoContrata);
+            string contrataContrataTeam = FindParkMasterDataTeam(equipoContrata);
 
             try
             {
@@ -170,7 +166,7 @@ namespace RitmsHub.Scripts
 
                 Guid userId = userResults.Entities[0].Id;
 
-                // Check if the user is already a member of the Contrata Contrata team
+                // Check if the Contrata Contrata team exists
                 var contrataTeamQuery = new QueryExpression("team")
                 {
                     ColumnSet = new ColumnSet("teamid"),
@@ -187,6 +183,7 @@ namespace RitmsHub.Scripts
 
                 Guid contrataTeamId = contrataTeamResults.Entities[0].Id;
 
+                // Check if the user is a member of the Contrata Contrata team
                 var membershipQuery = new QueryExpression("teammembership")
                 {
                     Criteria = new FilterExpression()
@@ -196,63 +193,93 @@ namespace RitmsHub.Scripts
 
                 EntityCollection membershipResults = await Task.Run(() => service.RetrieveMultiple(membershipQuery));
 
+                bool contrataTeamAssigned = false;
+
                 if (membershipResults.Entities.Count == 0)
                 {
-                    DynamicsCrmUtility.LogMessage($"User {userDomain} is not a member of the required Contrata Contrata team {contrataContrataTeam}", "WARNING");
-                    return false;
-                }
-
-                // User is a member of the Contrata Contrata team, now assign them to the new team
-                var newTeamQuery = new QueryExpression("team")
-                {
-                    ColumnSet = new ColumnSet("teamid"),
-                    Criteria = new FilterExpression()
-                };
-                newTeamQuery.Criteria.AddCondition("name", ConditionOperator.Equal, equipoContrata);
-
-                EntityCollection newTeamResults = await Task.Run(() => service.RetrieveMultiple(newTeamQuery));
-                if (newTeamResults.Entities.Count == 0)
-                {
-                    DynamicsCrmUtility.LogMessage($"New team not found: {equipoContrata}", "WARNING");
-                    return false;
-                }
-
-                Guid newTeamId = newTeamResults.Entities[0].Id;
-
-                // Check if user is already a member of the new team
-                var newMembershipQuery = new QueryExpression("teammembership")
-                {
-                    Criteria = new FilterExpression()
-                };
-                newMembershipQuery.Criteria.AddCondition("systemuserid", ConditionOperator.Equal, userId);
-                newMembershipQuery.Criteria.AddCondition("teamid", ConditionOperator.Equal, newTeamId);
-
-                EntityCollection newMembershipResults = await Task.Run(() => service.RetrieveMultiple(newMembershipQuery));
-
-                if (newMembershipResults.Entities.Count == 0)
-                {
-                    // User is not a member of the new team, so add them
+                    // User is not a member of the Contrata Contrata team, so add them
                     try
                     {
                         await Task.Run(() => service.Associate(
                             "team",
-                            newTeamId,
+                            contrataTeamId,
                             new Relationship("teammembership_association"),
                             new EntityReferenceCollection() { new EntityReference("systemuser", userId) }
                         ));
-                        DynamicsCrmUtility.LogMessage($"User {userDomain} successfully assigned to new team {equipoContrata}");
-                        return true;
+                        DynamicsCrmUtility.LogMessage($"User {userDomain} successfully assigned to Contrata Contrata team {contrataContrataTeam}");
+                        contrataTeamAssigned = true;
                     }
                     catch (Exception ex)
                     {
-                        DynamicsCrmUtility.LogMessage($"Failed to assign user {userDomain} to new team {equipoContrata}: {ex.Message}", "ERROR");
+                        DynamicsCrmUtility.LogMessage($"Failed to assign user {userDomain} to Contrata Contrata team {contrataContrataTeam}: {ex.Message}", "ERROR");
                         return false;
                     }
                 }
                 else
                 {
-                    DynamicsCrmUtility.LogMessage($"User {userDomain} is already a member of the new team {equipoContrata}");
-                    return true;
+                    contrataTeamAssigned = true;
+                }
+
+                // Only proceed with new team assignment if Contrata Contrata team assignment was successful
+                if (contrataTeamAssigned)
+                {
+                    // Now assign the user to the new team
+                    var newTeamQuery = new QueryExpression("team")
+                    {
+                        ColumnSet = new ColumnSet("teamid"),
+                        Criteria = new FilterExpression()
+                    };
+                    newTeamQuery.Criteria.AddCondition("name", ConditionOperator.Equal, equipoContrata);
+
+                    EntityCollection newTeamResults = await Task.Run(() => service.RetrieveMultiple(newTeamQuery));
+                    if (newTeamResults.Entities.Count == 0)
+                    {
+                        DynamicsCrmUtility.LogMessage($"New team not found: {equipoContrata}", "WARNING");
+                        return false;
+                    }
+
+                    Guid newTeamId = newTeamResults.Entities[0].Id;
+
+                    // Check if user is already a member of the new team
+                    var newMembershipQuery = new QueryExpression("teammembership")
+                    {
+                        Criteria = new FilterExpression()
+                    };
+                    newMembershipQuery.Criteria.AddCondition("systemuserid", ConditionOperator.Equal, userId);
+                    newMembershipQuery.Criteria.AddCondition("teamid", ConditionOperator.Equal, newTeamId);
+
+                    EntityCollection newMembershipResults = await Task.Run(() => service.RetrieveMultiple(newMembershipQuery));
+
+                    if (newMembershipResults.Entities.Count == 0)
+                    {
+                        // User is not a member of the new team, so add them
+                        try
+                        {
+                            await Task.Run(() => service.Associate(
+                                "team",
+                                newTeamId,
+                                new Relationship("teammembership_association"),
+                                new EntityReferenceCollection() { new EntityReference("systemuser", userId) }
+                            ));
+                            DynamicsCrmUtility.LogMessage($"User {userDomain} successfully assigned to new team {equipoContrata}");
+                            return true;
+                        }
+                        catch (Exception ex)
+                        {
+                            DynamicsCrmUtility.LogMessage($"Failed to assign user {userDomain} to new team {equipoContrata}: {ex.Message}", "ERROR");
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        DynamicsCrmUtility.LogMessage($"User {userDomain} is already a member of the new team {equipoContrata}");
+                        return true;
+                    }
+                }
+                else
+                {
+                    DynamicsCrmUtility.LogMessage($"User {userDomain} could not be assigned to new team {equipoContrata} because Contrata Contrata team assignment failed", "WARNING");
+                    return false;
                 }
             }
             catch (Exception ex)

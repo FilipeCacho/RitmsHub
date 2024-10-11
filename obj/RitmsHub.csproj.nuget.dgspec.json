@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Filipe.cacho\\Documents\\MY  CODE\\Ritms Console\\RitmsHub.csproj": {}
+    "C:\\Users\\Filipe.cacho\\Documents\\MY  CODE\\RitmsHub\\RitmsHub.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Filipe.cacho\\Documents\\MY  CODE\\Ritms Console\\RitmsHub.csproj": {
+    "C:\\Users\\Filipe.cacho\\Documents\\MY  CODE\\RitmsHub\\RitmsHub.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Filipe.cacho\\Documents\\MY  CODE\\Ritms Console\\RitmsHub.csproj",
+        "projectUniqueName": "C:\\Users\\Filipe.cacho\\Documents\\MY  CODE\\RitmsHub\\RitmsHub.csproj",
         "projectName": "RitmsHub",
-        "projectPath": "C:\\Users\\Filipe.cacho\\Documents\\MY  CODE\\Ritms Console\\RitmsHub.csproj",
+        "projectPath": "C:\\Users\\Filipe.cacho\\Documents\\MY  CODE\\RitmsHub\\RitmsHub.csproj",
         "packagesPath": "C:\\Users\\Filipe.cacho\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Filipe.cacho\\Documents\\MY  CODE\\Ritms Console\\obj\\",
+        "outputPath": "C:\\Users\\Filipe.cacho\\Documents\\MY  CODE\\RitmsHub\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Filipe.cacho\\AppData\\Roaming\\NuGet\\NuGet.Config",
