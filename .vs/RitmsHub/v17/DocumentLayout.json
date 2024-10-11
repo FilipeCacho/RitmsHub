@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Filipe.cacho\\Documents\\MY  CODE\\RitmsHub\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{791CB9C2-8BE4-483B-BC54-FAF5E10E3487}|RitmsHub.csproj|c:\\users\\filipe.cacho\\documents\\my  code\\ritmshub\\scripts\\assignnewteamtouser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{791CB9C2-8BE4-483B-BC54-FAF5E10E3487}|RitmsHub.csproj|solutionrelative:scripts\\assignnewteamtouser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{791CB9C2-8BE4-483B-BC54-FAF5E10E3487}|RitmsHub.csproj|c:\\users\\filipe.cacho\\documents\\my  code\\ritmshub\\scripts\\workorderviewcreator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{791CB9C2-8BE4-483B-BC54-FAF5E10E3487}|RitmsHub.csproj|solutionrelative:scripts\\workorderviewcreator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{791CB9C2-8BE4-483B-BC54-FAF5E10E3487}|RitmsHub.csproj|c:\\users\\filipe.cacho\\documents\\my  code\\ritmshub\\scripts\\notificationsviewcreator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{791CB9C2-8BE4-483B-BC54-FAF5E10E3487}|RitmsHub.csproj|solutionrelative:scripts\\notificationsviewcreator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{791CB9C2-8BE4-483B-BC54-FAF5E10E3487}|RitmsHub.csproj|c:\\users\\filipe.cacho\\documents\\my  code\\ritmshub\\scripts\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,26 +54,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AssignNewTeamToUser.cs",
-              "DocumentMoniker": "C:\\Users\\Filipe.cacho\\Documents\\MY  CODE\\RitmsHub\\scripts\\AssignNewTeamToUser.cs",
-              "RelativeDocumentMoniker": "scripts\\AssignNewTeamToUser.cs",
-              "ToolTip": "C:\\Users\\Filipe.cacho\\Documents\\MY  CODE\\RitmsHub\\scripts\\AssignNewTeamToUser.cs",
-              "RelativeToolTip": "scripts\\AssignNewTeamToUser.cs",
-              "ViewState": "AQIAAHIAAAAAAAAAAAAkwH8AAAAzAAAA",
+              "DocumentIndex": 1,
+              "Title": "NotificationsViewCreator.cs",
+              "DocumentMoniker": "C:\\Users\\Filipe.cacho\\Documents\\MY  CODE\\RitmsHub\\scripts\\NotificationsViewCreator.cs",
+              "RelativeDocumentMoniker": "scripts\\NotificationsViewCreator.cs",
+              "ToolTip": "C:\\Users\\Filipe.cacho\\Documents\\MY  CODE\\RitmsHub\\scripts\\NotificationsViewCreator.cs",
+              "RelativeToolTip": "scripts\\NotificationsViewCreator.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-11T15:32:24.331Z",
+              "WhenOpened": "2024-10-11T16:23:07.272Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "WorkOrderViewCreator.cs",
+              "DocumentMoniker": "C:\\Users\\Filipe.cacho\\Documents\\MY  CODE\\RitmsHub\\scripts\\WorkOrderViewCreator.cs",
+              "RelativeDocumentMoniker": "scripts\\WorkOrderViewCreator.cs",
+              "ToolTip": "C:\\Users\\Filipe.cacho\\Documents\\MY  CODE\\RitmsHub\\scripts\\WorkOrderViewCreator.cs",
+              "RelativeToolTip": "scripts\\WorkOrderViewCreator.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T16:19:18.268Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Menu.cs",
               "DocumentMoniker": "C:\\Users\\Filipe.cacho\\Documents\\MY  CODE\\RitmsHub\\scripts\\Menu.cs",
               "RelativeDocumentMoniker": "scripts\\Menu.cs",
               "ToolTip": "C:\\Users\\Filipe.cacho\\Documents\\MY  CODE\\RitmsHub\\scripts\\Menu.cs",
               "RelativeToolTip": "scripts\\Menu.cs",
-              "ViewState": "AQIAABYBAAAAAAAAAAAcwC4BAAAlAAAA",
+              "ViewState": "AQIAAB8BAAAAAAAAAAAowDkBAABHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-03T10:49:40.558Z",
               "EditorCaption": ""

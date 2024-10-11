@@ -29,6 +29,9 @@ namespace RitmsHub.scripts
         public async Task CreateAndSaveNotificationsViewAsync()
         {
             string fetchXml = BuildNotificationsQuery();
+
+            Console.Clear();
+            
             DynamicsCrmUtility.LogMessage("Generated FetchXML Query for Notifications:");
             DynamicsCrmUtility.LogMessage(fetchXml);
 

@@ -31,6 +31,9 @@ namespace RitmsHub.scripts
         public async Task CreateAndSaveWorkOrderViewAsync()
         {
             string fetchXml = BuildWorkOrderQuery();
+            
+            Console.Clear();
+            
             DynamicsCrmUtility.LogMessage("Generated FetchXML Query:");
             DynamicsCrmUtility.LogMessage(fetchXml);
 
