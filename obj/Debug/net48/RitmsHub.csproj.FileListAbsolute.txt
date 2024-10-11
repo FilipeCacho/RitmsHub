@@ -1,0 +1,286 @@
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\RitmsHub.exe.config
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\RitmsHub.exe
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\RitmsHub.pdb
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\ClosedXML.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\DocumentFormat.OpenXml.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\EPPlus.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\EPPlus.Interfaces.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\EPPlus.System.Drawing.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\ExcelNumberFormat.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\Irony.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\Microsoft.Crm.Sdk.Proxy.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\Microsoft.Xrm.Sdk.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\Microsoft.Xrm.Sdk.Deployment.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\Microsoft.Xrm.Sdk.Workflow.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\Microsoft.Rest.ClientRuntime.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\Microsoft.Xrm.Tooling.Connector.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\Microsoft.Xrm.Tooling.CrmConnectControl.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\Microsoft.Xrm.Tooling.Ui.Styles.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\Microsoft.Xrm.Tooling.WebResourceUtility.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\Microsoft.Identity.Client.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\Newtonsoft.Json.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\SixLabors.Fonts.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\System.Buffers.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\System.ComponentModel.Annotations.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\System.Configuration.ConfigurationManager.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\System.IO.Packaging.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\System.Memory.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\System.Numerics.Vectors.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\System.Security.AccessControl.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\System.Security.Permissions.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\System.Security.Principal.Windows.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\System.ServiceModel.Http.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\System.ServiceModel.Primitives.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\System.Text.Encodings.Web.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\System.Text.Json.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\System.Threading.Tasks.Extensions.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\System.ValueTuple.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\XLParser.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\ar-SA\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\ar-SA\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\bg-BG\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\bg-BG\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\ca-ES\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\ca-ES\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\cs-CZ\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\cs-CZ\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\da-DK\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\da-DK\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\de-DE\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\de-DE\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\el-GR\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\el-GR\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\es-ES\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\es-ES\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\et-EE\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\et-EE\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\eu-ES\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\eu-ES\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\fi-FI\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\fi-FI\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\fr-FR\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\fr-FR\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\gl-ES\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\gl-ES\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\he-IL\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\he-IL\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\hi-IN\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\hi-IN\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\hr-HR\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\hr-HR\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\hu-HU\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\hu-HU\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\id-ID\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\id-ID\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\it-IT\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\it-IT\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\ja-JP\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\ja-JP\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\kk-KZ\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\kk-KZ\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\ko-KR\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\ko-KR\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\lt-LT\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\lt-LT\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\lv-LV\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\lv-LV\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\ms-MY\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\ms-MY\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\nb-NO\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\nb-NO\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\nl-NL\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\nl-NL\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\pl-PL\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\pl-PL\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\pt-BR\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\pt-BR\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\pt-PT\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\pt-PT\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\ro-RO\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\ro-RO\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\ru-RU\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\ru-RU\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\sk-SK\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\sk-SK\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\sl-SI\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\sl-SI\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\sr-Cyrl-RS\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\sr-Cyrl-RS\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\sr-Latn-RS\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\sr-Latn-RS\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\sv-SE\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\sv-SE\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\th-TH\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\th-TH\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\tr-TR\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\tr-TR\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\uk-UA\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\uk-UA\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\vi-VN\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\vi-VN\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\zh-CN\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\zh-CN\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\zh-HK\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\zh-HK\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\zh-TW\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\bin\Debug\net48\zh-TW\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\obj\Debug\net48\RitmsHub.csproj.AssemblyReference.cache
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\obj\Debug\net48\RitmsHub.csproj.SuggestedBindingRedirects.cache
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\obj\Debug\net48\RitmsHub.exe.config
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\obj\Debug\net48\RitmsHub.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\obj\Debug\net48\RitmsHub.AssemblyInfoInputs.cache
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\obj\Debug\net48\RitmsHub.AssemblyInfo.cs
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\obj\Debug\net48\RitmsHub.csproj.CoreCompileInputs.cache
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\obj\Debug\net48\RitmsHub.csproj.Up2Date
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\obj\Debug\net48\RitmsHub.exe
+C:\Users\Filipe.cacho\Documents\MY  CODE\RitmsHub\obj\Debug\net48\RitmsHub.pdb
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\RitmsHub.exe.config
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\RitmsHub.exe
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\RitmsHub.pdb
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\ClosedXML.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\DocumentFormat.OpenXml.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\EPPlus.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\EPPlus.Interfaces.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\EPPlus.System.Drawing.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\ExcelNumberFormat.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\Irony.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\Microsoft.Crm.Sdk.Proxy.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\Microsoft.Xrm.Sdk.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\Microsoft.Xrm.Sdk.Deployment.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\Microsoft.Xrm.Sdk.Workflow.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\Microsoft.Rest.ClientRuntime.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\Microsoft.Xrm.Tooling.Connector.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\Microsoft.Xrm.Tooling.CrmConnectControl.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\Microsoft.Xrm.Tooling.Ui.Styles.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\Microsoft.Xrm.Tooling.WebResourceUtility.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\Microsoft.Identity.Client.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\Newtonsoft.Json.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\SixLabors.Fonts.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\System.Buffers.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\System.ComponentModel.Annotations.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\System.Configuration.ConfigurationManager.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\System.IO.Packaging.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\System.Memory.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\System.Numerics.Vectors.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\System.Security.AccessControl.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\System.Security.Permissions.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\System.Security.Principal.Windows.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\System.ServiceModel.Http.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\System.ServiceModel.Primitives.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\System.Text.Encodings.Web.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\System.Text.Json.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\System.Threading.Tasks.Extensions.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\System.ValueTuple.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\XLParser.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\ar-SA\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\ar-SA\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\bg-BG\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\bg-BG\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\ca-ES\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\ca-ES\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\cs-CZ\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\cs-CZ\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\da-DK\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\da-DK\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\de-DE\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\de-DE\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\el-GR\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\el-GR\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\es-ES\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\es-ES\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\et-EE\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\et-EE\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\eu-ES\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\eu-ES\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\fi-FI\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\fi-FI\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\fr-FR\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\fr-FR\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\gl-ES\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\gl-ES\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\he-IL\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\he-IL\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\hi-IN\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\hi-IN\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\hr-HR\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\hr-HR\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\hu-HU\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\hu-HU\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\id-ID\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\id-ID\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\it-IT\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\it-IT\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\ja-JP\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\ja-JP\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\kk-KZ\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\kk-KZ\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\ko-KR\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\ko-KR\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\lt-LT\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\lt-LT\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\lv-LV\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\lv-LV\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\ms-MY\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\ms-MY\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\nb-NO\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\nb-NO\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\nl-NL\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\nl-NL\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\pl-PL\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\pl-PL\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\pt-BR\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\pt-BR\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\pt-PT\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\pt-PT\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\ro-RO\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\ro-RO\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\ru-RU\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\ru-RU\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\sk-SK\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\sk-SK\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\sl-SI\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\sl-SI\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\sr-Cyrl-RS\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\sr-Cyrl-RS\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\sr-Latn-RS\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\sr-Latn-RS\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\sv-SE\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\sv-SE\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\th-TH\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\th-TH\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\tr-TR\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\tr-TR\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\uk-UA\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\uk-UA\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\vi-VN\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\vi-VN\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\zh-CN\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\zh-CN\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\zh-HK\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\zh-HK\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\zh-TW\Microsoft.Xrm.Tooling.CrmConnectControl.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\bin\Debug\net48\zh-TW\Microsoft.Xrm.Tooling.Ui.Styles.resources.dll
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\obj\Debug\net48\RitmsHub.csproj.AssemblyReference.cache
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\obj\Debug\net48\RitmsHub.csproj.SuggestedBindingRedirects.cache
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\obj\Debug\net48\RitmsHub.exe.config
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\obj\Debug\net48\RitmsHub.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\obj\Debug\net48\RitmsHub.AssemblyInfoInputs.cache
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\obj\Debug\net48\RitmsHub.AssemblyInfo.cs
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\obj\Debug\net48\RitmsHub.csproj.CoreCompileInputs.cache
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\obj\Debug\net48\RitmsHub.csproj.Up2Date
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\obj\Debug\net48\RitmsHub.exe
+C:\Users\Filipe.cacho\Documents\MY  CODE\Ritms Console\obj\Debug\net48\RitmsHub.pdb

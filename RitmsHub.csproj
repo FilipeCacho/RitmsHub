@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net48</TargetFramework>
+		<LangVersion>latest</LangVersion>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="ClosedXML" Version="0.102.3" />
+		<PackageReference Include="EPPlus" Version="7.2.2" />
+		<PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="9.0.2.52" />
+		<PackageReference Include="Microsoft.CrmSdk.XrmTooling.CoreAssembly" Version="9.1.1.65" />
+		<PackageReference Include="Microsoft.CrmSdk.XrmTooling.WpfControls.WithResources" Version="9.1.1.65" />
+		<PackageReference Include="Microsoft.Identity.Client" Version="4.62.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
+		<PackageReference Include="System.ServiceModel.Primitives" Version="4.10.0" />
+		<PackageReference Include="System.ServiceModel.Http" Version="4.10.0" />
+	</ItemGroup>
+</Project>
