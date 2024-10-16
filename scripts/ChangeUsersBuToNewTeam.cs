@@ -115,7 +115,7 @@ namespace RitmsHub.Scripts
                     return;
                 }
                 string newBuName = DeriveNewBuName(originalNewCreatedPark);
-                await ChangeBuAndReapplyRolesAsync(user, newBuName);
+                await ChangeBuAndReapplyRolesAsync(user, newBuName, originalNewCreatedPark);
             }
             catch (Exception ex)
             {
@@ -140,7 +140,7 @@ namespace RitmsHub.Scripts
             return Regex.Replace(originalNewCreatedPark, @"^Equipo contrata\s*", "", RegexOptions.IgnoreCase).Trim();
         }
 
-        private async Task ChangeBuAndReapplyRolesAsync(Entity user, string newBuName)
+        private async Task ChangeBuAndReapplyRolesAsync(Entity user, string newBuName, string originalNewCreatedPark)
         {
             var currentRoles = await GetUserRolesAsync(user.Id);
             var newBu = await GetBusinessUnitByNameAsync(newBuName);
@@ -161,6 +161,9 @@ namespace RitmsHub.Scripts
 
             // Reapply roles
             await ReapplyRolesToUserAsync(user.Id, newBu.Id, currentRoles);
+
+            // Remove the Contrata Contrata team
+            await RemoveContrataContrataTeamAsync(user, originalNewCreatedPark);
         }
 
         private async Task<List<Entity>> GetUserRolesAsync(Guid userId)
@@ -212,6 +215,81 @@ namespace RitmsHub.Scripts
                 }
             }
         }
+
+
+        // ----------------------------------------------------------
+        // remove extra contrata contra team from users that have in their name the subcontractor of the team being created
+        // for example remove  Equipo contrata 0-PT-CES-01 Contrata
+
+        private async Task RemoveContrataContrataTeamAsync(Entity user, string newCreatedPark)
+        {
+            // Derive the contrataContrataTeam name
+            string contrataContrataTeam = DeriveContrataContrataTeam(newCreatedPark);
+
+            // Retrieve the user's teams
+            var userTeams = await GetUserTeamsAsync(user.Id);
+
+            // Find the matching team (case-insensitive)
+            var teamToRemove = userTeams.FirstOrDefault(t =>
+                string.Equals(t.GetAttributeValue<string>("name"), contrataContrataTeam, StringComparison.OrdinalIgnoreCase));
+
+            if (teamToRemove != null)
+            {
+                // Remove the team from the user
+                await RemoveTeamFromUserAsync(user.Id, teamToRemove.Id);
+                Console.WriteLine($"Removed team '{contrataContrataTeam}' from user {user.GetAttributeValue<string>("yomifullname")}.");
+            }
+        }
+
+        private string DeriveContrataContrataTeam(string newCreatedPark)
+        {
+            var match = Regex.Match(newCreatedPark, @"(Equipo contrata.*?Contrata)");
+            return match.Success ? match.Groups[1].Value.Trim() : string.Empty;
+        }
+
+        private async Task<List<Entity>> GetUserTeamsAsync(Guid userId)
+        {
+            var query = new QueryExpression("team")
+            {
+                ColumnSet = new ColumnSet("teamid", "name"),
+                LinkEntities = {
+            new LinkEntity
+            {
+                LinkFromEntityName = "team",
+                LinkToEntityName = "teammembership",
+                LinkFromAttributeName = "teamid",
+                LinkToAttributeName = "teamid",
+                LinkCriteria = new FilterExpression
+                {
+    Conditions = {
+        new ConditionExpression("systemuserid", ConditionOperator.Equal, userId)
+    }
+}
+            }
+        }
+            };
+
+            var result = await _service.RetrieveMultipleAsync(query);
+            return result.Entities.ToList();
+        }
+
+        private async Task RemoveTeamFromUserAsync(Guid userId, Guid teamId)
+        {
+            var request = new DisassociateRequest
+            {
+                Target = new EntityReference("systemuser", userId),
+                RelatedEntities = new EntityReferenceCollection
+        {
+            new EntityReference("team", teamId)
+        },
+                Relationship = new Relationship("teammembership_association")
+            };
+
+            await Task.Run(() => _service.Execute(request));
+        }
+
+
+        // ----------------------------------------------------------
 
         private async Task<Entity> FindEquivalentRoleInBusinessUnitAsync(Entity sourceRole, Guid targetBusinessUnitId)
         {
