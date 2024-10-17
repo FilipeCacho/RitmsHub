@@ -3,10 +3,7 @@ using System.IO;
 using System.Reflection;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using System.Linq;
 using OfficeOpenXml;
-using RitmsHub.Scripts;
-using System.Workflow.Activities;
 
 namespace RitmsHub.Scripts
 {
@@ -20,20 +17,18 @@ namespace RitmsHub.Scripts
             InitializeExcelPackage();
         }
 
-        // Static variable to store the current environment
         public static int CurrentEnvironment { get; set; } = 3; // Default to PRD (3)
 
         private static void InitializeExcelPackage()
         {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-            string excelDirectory = FindExcelFileDirectory();
-            filePath = Path.Combine(excelDirectory, "dataCenter.xlsx");
 
-            if (!File.Exists(filePath))
+            if (!ExcelTemplateManager.CheckAndCreateExcelFile())
             {
-                throw new FileNotFoundException($"The specified file was not found. Looked in: {filePath}");
+                throw new FileNotFoundException("Failed to initialize Excel file.");
             }
 
+            filePath = ExcelTemplateManager.GetExcelFilePath();
             package = new ExcelPackage(new FileInfo(filePath));
         }
 

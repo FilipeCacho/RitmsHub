@@ -51,9 +51,10 @@ namespace RitmsHub.Scripts
                 Console.ResetColor();
 
                 var serviceClient = new CrmServiceClient(connectionString);
-                if (!serviceClient.IsReady)
+                if (serviceClient is null || !serviceClient.IsReady)
                 {
-                    throw new Exception($"Failed to connect. Error: {serviceClient.LastCrmError}");
+                    throw new Exception($"Failed to connect. Error: {(serviceClient?.LastCrmError ?? "Unknown error")}");
+
                 }
 
                 _service = serviceClient;

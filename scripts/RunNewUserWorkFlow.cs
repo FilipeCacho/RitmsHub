@@ -22,7 +22,7 @@ namespace RitmsHub.Scripts
 
                 using var serviceClient = DynamicsCrmUtility.CreateCrmServiceClient();
 
-                if (!serviceClient.IsReady)
+                if (serviceClient is null || !serviceClient.IsReady)
                 {
                     Console.WriteLine($"Failed to connect. Error: {serviceClient.LastCrmError}");
                     Console.WriteLine($"Detailed error: {serviceClient.LastCrmException?.ToString()}");

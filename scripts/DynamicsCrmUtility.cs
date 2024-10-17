@@ -32,9 +32,35 @@ namespace RitmsHub.Scripts
             {
                 string connectionString = CreateConnectionString();
                 cachedServiceClient = new CrmServiceClient(connectionString);
+
+                // Check for specific connection errors
                 if (!cachedServiceClient.IsReady)
                 {
-                    throw new Exception("Failed to connect to Dynamics CRM");
+                    string errorMessage;
+                    if (cachedServiceClient.LastCrmError.Contains("401") ||
+                        cachedServiceClient.LastCrmError.Contains("authentication failed"))
+                    {
+                        errorMessage = "Authentication failed. Please check your username and password.";
+                    }
+                    else if (cachedServiceClient.LastCrmError.Contains("Unable to Login to Dynamics CRM"))
+                    {
+                        errorMessage = "Unable to connect to Dynamics CRM. Please check your connection details and try again.";
+                    }
+                    else
+                    {
+                        errorMessage = "An unexpected error occurred while connecting to Dynamics CRM. Please try again or contact support.";
+                    }
+
+                    // Display error message using LogMessage
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    LogMessage(errorMessage, "ERROR");
+
+                    // Wait for user input
+                    Console.WriteLine("\nPress any key to close the console..");
+                    Console.ReadKey();
+                    Environment.Exit(0);
+
+                    return null;
                 }
             }
             return cachedServiceClient;

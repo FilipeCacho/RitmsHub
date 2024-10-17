@@ -10,11 +10,27 @@ namespace RitmsHub.Scripts
 {
     class Program
     {
-
         static async Task Main(string[] args)
         {
-            var menuHandler = new MenuHandler();
-            await menuHandler.RunMenuAsync();
+            try
+            {
+                if (!ExcelTemplateManager.CheckAndCreateExcelFile())
+                {
+                    Console.WriteLine("Failed to initialize the Excel file. The program will now exit.");
+                    Console.WriteLine("Press any key to continue...");
+                    Console.ReadKey();
+                    return;
+                }
+
+                var menuHandler = new MenuHandler();
+                await menuHandler.RunMenuAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+                Console.WriteLine("Press any key to exit...");
+                Console.ReadKey();
+            }
         }
     }
 
@@ -38,6 +54,14 @@ namespace RitmsHub.Scripts
             {
                 DisplayMenu();
                 string choice = Console.ReadLine();
+
+                if (!ExcelTemplateManager.ExcelFileExists() && choice != "14" && choice != "0")
+                {
+                    Console.WriteLine("Excel file not found. Please extract the template first (Option 14).");
+                    Console.WriteLine("Press any key to continue...");
+                    Console.ReadKey();
+                    continue;
+                }
 
                 switch (choice)
                 {
@@ -112,6 +136,10 @@ namespace RitmsHub.Scripts
                         ChangeEnvironment();
                         break;
 
+                    case "14":
+                        ExtractExcelTemplate();
+                        break;
+
 
                     default:
                         Console.WriteLine("Invalid choice. Please try again.");
@@ -119,15 +147,23 @@ namespace RitmsHub.Scripts
                         Console.ReadKey();
                         break;
                 }
+
+                if (choice != "14" && choice != "0" && !ExcelTemplateManager.ValidateExcelFile())
+                {
+                    Console.WriteLine("Excel file validation failed. Please check the file contents.");
+                    Console.WriteLine("Press any key to continue...");
+                    Console.ReadKey();
+                }
             }
         }
 
         private void DisplayMenu()
         {
-
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"CRM Operations Menu (connected to {EnvironmentNames[ExcelReader.CurrentEnvironment]}):\n");
+
+                //color set in the excel template manager, for some unknown reason only works there
+                Console.WriteLine($"CRM Operations Menu (connected to {EnvironmentNames[ExcelReader.CurrentEnvironment]}):\n");
+            
 
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Create Teams flow");
@@ -153,6 +189,7 @@ namespace RitmsHub.Scripts
             Console.WriteLine("11. View info about 1 or 2 users");
             Console.WriteLine("12. Release any pending system locks");
             Console.WriteLine("13. Change connection to DEV, PRE or PRD");
+            Console.WriteLine("14. Extract Excel template");
             Console.WriteLine("0.  Exit");
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("-----------------------------------------------------------------------------------------------------");
@@ -470,6 +507,21 @@ namespace RitmsHub.Scripts
 
                 Console.ReadKey();
             }
+        }
+
+        private void ExtractExcelTemplate()
+        {
+            try
+            {
+                ExcelTemplateManager.ExtractExcelTemplate();
+                Console.WriteLine("Excel template extracted successfully.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error extracting Excel template: {ex.Message}");
+            }
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
         }
 
     }

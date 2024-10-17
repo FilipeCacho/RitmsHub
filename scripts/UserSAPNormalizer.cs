@@ -31,9 +31,9 @@ namespace RitmsHub.Scripts
         {
             string connectionString = DynamicsCrmUtility.CreateConnectionString();
             var serviceClient = DynamicsCrmUtility.CreateCrmServiceClient();
-            if (!serviceClient.IsReady)
+            if (serviceClient is null || !serviceClient.IsReady)
             {
-                throw new Exception($"Failed to connect to Dynamics CRM. Error: {serviceClient.LastCrmError}");
+                throw new Exception($"Failed to connect. Error: {(serviceClient?.LastCrmError ?? "Unknown error")}");
             }
             return serviceClient;
         }

@@ -89,9 +89,9 @@ namespace RitmsHub.Scripts
                 var serviceClient = await Task.Run(() => DynamicsCrmUtility.CreateCrmServiceClient());
 
 
-                if (!serviceClient.IsReady)
+                if (serviceClient is null || !serviceClient.IsReady)
                 {
-                    throw new Exception($"Failed to connect. Error: {serviceClient.LastCrmError}");
+                    throw new Exception($"Failed to connect. Error: {(serviceClient?.LastCrmError ?? "Unknown error")}");
                 }
 
                 this._service = serviceClient;

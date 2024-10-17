@@ -53,37 +53,9 @@
               "target": "Package",
               "version": "[7.2.2, )"
             },
-            "Microsoft.CrmSdk.CoreAssemblies": {
-              "target": "Package",
-              "version": "[9.0.2.52, )"
-            },
             "Microsoft.CrmSdk.XrmTooling.CoreAssembly": {
               "target": "Package",
               "version": "[9.1.1.65, )"
-            },
-            "Microsoft.CrmSdk.XrmTooling.WpfControls.WithResources": {
-              "target": "Package",
-              "version": "[9.1.1.65, )"
-            },
-            "Microsoft.Identity.Client": {
-              "target": "Package",
-              "version": "[4.62.0, )"
-            },
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[13.0.3, )"
-            },
-            "System.Configuration.ConfigurationManager": {
-              "target": "Package",
-              "version": "[6.0.0, )"
-            },
-            "System.ServiceModel.Http": {
-              "target": "Package",
-              "version": "[4.10.0, )"
-            },
-            "System.ServiceModel.Primitives": {
-              "target": "Package",
-              "version": "[4.10.0, )"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"

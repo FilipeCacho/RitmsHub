@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RitmsHub")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3254dbdcc0cb2bd9fbb7a6595cfa169153792ce5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+286e6a12fa12f04369225fd9a171240d0bf5d759")]
 [assembly: System.Reflection.AssemblyProductAttribute("RitmsHub")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RitmsHub")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -63,9 +63,9 @@ namespace RitmsHub.Scripts
             string connectionString = DynamicsCrmUtility.CreateConnectionString();
             var serviceClient = DynamicsCrmUtility.CreateCrmServiceClient();
 
-            if (!serviceClient.IsReady)
+            if (serviceClient is null || !serviceClient.IsReady)
             {
-                throw new Exception(string.Format("Failed to connect. Error: {0}", serviceClient.LastCrmError));
+                throw new Exception($"Failed to connect. Error: {(serviceClient?.LastCrmError ?? "Unknown error")}");
             }
 
             _service = serviceClient;
