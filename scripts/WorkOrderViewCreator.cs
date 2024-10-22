@@ -53,7 +53,6 @@ namespace RitmsHub.scripts
                 DynamicsCrmUtility.LogMessage("Personal view creation cancelled.");
             }
         }
-
         private string BuildWorkOrderQuery()
         {
             XDocument doc = new XDocument(

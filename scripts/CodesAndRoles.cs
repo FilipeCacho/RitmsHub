@@ -48,24 +48,17 @@ namespace RitmsHub.Scripts
 
         public static readonly string[] NADefaultRolesForInternalUser = { "EDPR_ROL_USA", "EDPR_ROL_Field Service_Resource", "EDPR_ROL_GENERAL", "EDPR_personal_interno", "Resco Archive Read" };
 
-
         public static readonly string[] EURegion = { "EU", "300000000" };
         public static readonly string[] NARegion = { "NA", "300000001" };
-
-
 
         //Resco Acess
         public static readonly string[] RescoTeamEU = { "Equipo templates checklist EUR" };
         public static readonly string[] RescoTeamNA = { "Equipo templates checklist NA" };
         public static readonly string[] RescoRole = { "EDPR_INSPECTIONS" };
 
-
         //new user workflow name
         public static readonly string NewUserWorkflow = "Usuario-Proceso para crear un recurso desde el usuario";
-    }
-
-    
-   
+    }  
 }
 
 

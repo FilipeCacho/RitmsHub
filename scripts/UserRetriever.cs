@@ -18,10 +18,6 @@ namespace RitmsHub.Scripts
         {
             _service = service;
         }
-
-
-
-
         public async Task<Entity> PromptAndRetrieveUser(string prompt)
         {
             while (true)
@@ -34,8 +30,6 @@ namespace RitmsHub.Scripts
                 {
                     return Exit; 
                 }
-
-
 
                 var users = await FindUsersAsync(input);
 
@@ -124,7 +118,5 @@ namespace RitmsHub.Scripts
             return await Task.Run(() => _service.Retrieve("systemuser", userId, new ColumnSet(true)));
         }
     }
-
-
 }
 

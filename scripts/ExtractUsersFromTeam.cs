@@ -12,11 +12,8 @@ using System.Threading.Tasks;
 
 namespace RitmsHub.Scripts
 {
-
-
     public static class ExtractUsersFromTeam
     {
-
         public static async Task<List<TransformedTeamData>> FormatTeamData()
         {
             List<TransformedTeamData> dynamicTeams = new List<TransformedTeamData>();

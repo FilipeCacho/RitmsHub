@@ -50,7 +50,6 @@ namespace RitmsHub.Scripts
                 Console.WriteLine("This is not a valid user to take permissions from.");
                 return false;
             }
-
             return true;
         }
     }

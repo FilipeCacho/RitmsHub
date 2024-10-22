@@ -5,7 +5,6 @@ namespace RitmsHub.Scripts
 {
     public partial class UserNormalizer
     {
-
         private async Task AddPortugalSpainTeams(Entity user)
         {
             if (user.Contains("businessunitid"))

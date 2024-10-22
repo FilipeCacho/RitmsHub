@@ -32,20 +32,6 @@ namespace RitmsHub.Scripts
             package = new ExcelPackage(new FileInfo(filePath));
         }
 
-        private static string FindExcelFileDirectory()
-        {
-            string currentDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            while (currentDirectory != null)
-            {
-                if (Path.GetFileName(currentDirectory).Equals("RitmsHub", StringComparison.OrdinalIgnoreCase))
-                {
-                    return currentDirectory;
-                }
-                currentDirectory = Directory.GetParent(currentDirectory)?.FullName;
-            }
-            throw new DirectoryNotFoundException("Could not find the RitmsHub directory containing the Excel file.");
-        }
-
         public static (string url, string username, string password, string appid, string redirecturi, string authType, string loginPrompt, bool requireNewInstance) ReadLoginValues()
         {
             ExcelWorksheet worksheet = package.Workbook.Worksheets["Login"];
@@ -267,11 +253,7 @@ namespace RitmsHub.Scripts
             return assignTeamDataList;
         }
     }
-
-  
-
-
-
+    
     public class TeamRow
         {
             public string ColumnA { get; set; }

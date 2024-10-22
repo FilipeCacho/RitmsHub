@@ -264,8 +264,9 @@ namespace RitmsHub.Scripts
                 LinkToAttributeName = "teamid",
                 LinkCriteria = new FilterExpression
                 {
-    Conditions = {
-        new ConditionExpression("systemuserid", ConditionOperator.Equal, userId)
+
+                    Conditions = {
+                                    new ConditionExpression("systemuserid", ConditionOperator.Equal, userId)
     }
 }
             }
@@ -290,7 +291,6 @@ namespace RitmsHub.Scripts
 
             await Task.Run(() => _service.Execute(request));
         }
-
 
         // ----------------------------------------------------------
 

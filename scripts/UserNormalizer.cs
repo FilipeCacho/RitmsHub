@@ -270,11 +270,7 @@ namespace RitmsHub.Scripts
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"\nUpdated user region to: {region[0]}");
             Console.ResetColor();
-        }
-
-        
-
-        
+        }    
     }
 }
 

@@ -10,11 +10,9 @@ namespace RitmsHub.Scripts
         private const string EmbeddedResourceName = "RitmsHub.dataCenter.xlsx";
         private const string FileName = "dataCenter.xlsx";
 
-
-
         public static string GetExcelFilePath()
         {
-            return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, FileName);
+            return Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"../../../", FileName));
         }
 
         public static bool ExcelFileExists()

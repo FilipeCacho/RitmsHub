@@ -7,8 +7,6 @@ namespace RitmsHub.Scripts
     {
         public static List<TransformedTeamData> FormatTeamData()
         {
-            
-
             List<TransformedTeamData> dynamicTeams = new List<TransformedTeamData>();
             List<TeamRow> validTeams = ExcelReader.ValidateTeamsToCreate();
             if (validTeams.Count > 0)

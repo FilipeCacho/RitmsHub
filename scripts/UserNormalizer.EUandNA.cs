@@ -51,8 +51,5 @@ namespace RitmsHub.Scripts
                 Console.WriteLine("User does not match NA internal pattern.");
             }
         }
-
-
-
     }
 }
