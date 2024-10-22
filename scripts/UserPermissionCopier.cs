@@ -84,7 +84,7 @@ namespace RitmsHub.Scripts
             {
                 ConfigureSecurityProtocol();
                 string connectionString = DynamicsCrmUtility.CreateConnectionString();
-                DynamicsCrmUtility.LogMessage($"Attempting to connect with: {connectionString}");
+                //DynamicsCrmUtility.LogMessage($"Attempting to connect with: {connectionString}");
 
                 var serviceClient = await Task.Run(() => DynamicsCrmUtility.CreateCrmServiceClient());
 

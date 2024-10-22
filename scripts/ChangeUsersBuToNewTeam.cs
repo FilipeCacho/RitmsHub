@@ -41,19 +41,19 @@ namespace RitmsHub.Scripts
             }
         }
 
-        private async Task ConnectToDynamicsAsync()
+        private Task ConnectToDynamicsAsync()
         {
             try
             {
                 string connectionString = DynamicsCrmUtility.CreateConnectionString();
                 Console.ForegroundColor = ConsoleColor.Magenta;
-                Console.WriteLine($"Attempting to connect with: {connectionString}");
+                //Console.WriteLine($"Attempting to connect with: {connectionString}");
                 Console.ResetColor();
 
                 var serviceClient = new CrmServiceClient(connectionString);
                 if (serviceClient is null || !serviceClient.IsReady)
                 {
-                    throw new Exception($"Failed to connect. Error: {(serviceClient?.LastCrmError ?? "Unknown error")}");
+                    throw new Exception($"Failed to connect. Error: {serviceClient?.LastCrmError ?? "Unknown error"}");
 
                 }
 
@@ -68,6 +68,8 @@ namespace RitmsHub.Scripts
                 LogError("Failed to connect to Dynamics CRM", ex);
                 throw;
             }
+
+            return Task.CompletedTask;
         }
 
         private List<PreprocessedBuData> PreprocessData(List<BuUserDomains> buUserDomainsList)

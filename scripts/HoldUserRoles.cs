@@ -73,23 +73,23 @@ namespace RitmsHub.Scripts
             Console.ReadKey();
         }
 
-        private async Task ConnectToCrmAsync()
+        private Task ConnectToCrmAsync()
         {
             try
             {
                 string connectionString = DynamicsCrmUtility.CreateConnectionString();
-                DynamicsCrmUtility.LogMessage($"Attempting to connect with: {connectionString}");
+                //DynamicsCrmUtility.LogMessage($"Attempting to connect with: {connectionString}");
 
                 var serviceClient = DynamicsCrmUtility.CreateCrmServiceClient();
 
                 if (serviceClient is null || !serviceClient.IsReady)
                 {
-                    throw new Exception($"Failed to connect. Error: {(serviceClient?.LastCrmError ?? "Unknown error")}");
+                    throw new Exception($"Failed to connect. Error: {serviceClient?.LastCrmError ?? "Unknown error"}");
                 }
 
-                this._service = serviceClient;
-                this._userRetriever = new UserRetriever(_service);
-                this._permissionCopier = new PermissionCopier(_service);
+                _service = serviceClient;
+                _userRetriever = new UserRetriever(_service);
+                _permissionCopier = new PermissionCopier(_service);
                 //DynamicsCrmUtility.LogMessage($"Connected successfully to {serviceClient.ConnectedOrgUniqueName}");
             }
             catch (Exception ex)
@@ -97,6 +97,8 @@ namespace RitmsHub.Scripts
                 DynamicsCrmUtility.LogMessage($"An error occurred while connecting to CRM: {ex.Message}", "ERROR");
                 throw;
             }
+
+            return Task.CompletedTask;
         }
 
         private async Task DisplayAndSaveUserRoles(Entity user)

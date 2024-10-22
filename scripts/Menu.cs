@@ -136,9 +136,6 @@ namespace RitmsHub.Scripts
                         ChangeEnvironment();
                         break;
 
-                    case "14":
-                        ExtractExcelTemplate();
-                        break;
 
 
                     default:
@@ -177,7 +174,6 @@ namespace RitmsHub.Scripts
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("-----------------------------------------------------------------------------------------------------");
 
-
             Console.WriteLine("\nOther flows");
             Console.WriteLine("-----------------------------------------------------------------------------------------------------");
             Console.ResetColor();
@@ -187,9 +183,8 @@ namespace RitmsHub.Scripts
             Console.WriteLine("9.  Hold user roles while BU is replaced");
             Console.WriteLine("10. Assign Teams to Users in the 'Assign Teams' worksheet");
             Console.WriteLine("11. View info about 1 or 2 users");
-            Console.WriteLine("12. Release any pending system locks");
+            Console.WriteLine("12. Tries to release any pending system locks");
             Console.WriteLine("13. Change connection to DEV, PRE or PRD");
-            Console.WriteLine("14. Extract Excel template");
             Console.WriteLine("0.  Exit");
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("-----------------------------------------------------------------------------------------------------");
@@ -507,21 +502,6 @@ namespace RitmsHub.Scripts
 
                 Console.ReadKey();
             }
-        }
-
-        private void ExtractExcelTemplate()
-        {
-            try
-            {
-                ExcelTemplateManager.ExtractExcelTemplate();
-                Console.WriteLine("Excel template extracted successfully.");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error extracting Excel template: {ex.Message}");
-            }
-            Console.WriteLine("Press any key to continue...");
-            Console.ReadKey();
         }
 
     }

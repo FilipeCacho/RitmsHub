@@ -154,15 +154,15 @@ namespace RitmsHub.scripts
             );
         }
 
-        private async Task ConnectToCrmAsync()
+        private Task ConnectToCrmAsync()
         {
             try
             {
                 string connectionString = DynamicsCrmUtility.CreateConnectionString();
-                DynamicsCrmUtility.LogMessage($"Attempting to connect with: {connectionString}");
+                //DynamicsCrmUtility.LogMessage($"Attempting to connect with: {connectionString}");
 
                 var serviceClient = DynamicsCrmUtility.CreateCrmServiceClient();
-                this.service = serviceClient;
+                service = serviceClient;
 
                 //DynamicsCrmUtility.LogMessage($"Connected successfully to {serviceClient.ConnectedOrgUniqueName}");
             }
@@ -171,6 +171,8 @@ namespace RitmsHub.scripts
                 DynamicsCrmUtility.LogMessage($"Failed to connect to Dynamics CRM: {ex.Message}", "ERROR");
                 throw;
             }
+
+            return Task.CompletedTask;
         }
 
         private async Task SavePersonalViewAsync(string fetchXml, string viewName)

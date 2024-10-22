@@ -151,7 +151,7 @@ namespace RitmsHub.scripts
             try
             {
                 string connectionString = DynamicsCrmUtility.CreateConnectionString();
-                DynamicsCrmUtility.LogMessage($"Attempting to connect with: {connectionString}");
+                //DynamicsCrmUtility.LogMessage($"Attempting to connect with: {connectionString}");
 
                 var serviceClient = DynamicsCrmUtility.CreateCrmServiceClient();
                 this.service = serviceClient;

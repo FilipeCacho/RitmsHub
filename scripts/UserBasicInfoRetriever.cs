@@ -58,21 +58,20 @@ namespace RitmsHub.Scripts
             }
         }
 
-        private async Task ConnectToCrmAsync()
+        private Task ConnectToCrmAsync()
         {
             string connectionString = DynamicsCrmUtility.CreateConnectionString();
             var serviceClient = DynamicsCrmUtility.CreateCrmServiceClient();
 
             if (serviceClient is null || !serviceClient.IsReady)
             {
-                throw new Exception($"Failed to connect. Error: {(serviceClient?.LastCrmError ?? "Unknown error")}");
+                throw new Exception($"Failed to connect. Error: {serviceClient?.LastCrmError ?? "Unknown error"}");
             }
 
             _service = serviceClient;
             _userRetriever = new UserRetriever(_service);
             _permissionCopier = new PermissionCopier(_service);
-
-            //Console.WriteLine(string.Format("Connected successfully to {0}", serviceClient.ConnectedOrgUniqueName));
+            return Task.CompletedTask;
         }
 
         private async Task<Entity> PromptAndRetrieveUserAsync(string prompt)
