@@ -3,6 +3,7 @@
 		<OutputType>Exe</OutputType>
 		<TargetFramework>net48</TargetFramework>
 		<LangVersion>latest</LangVersion>
+		<SignAssembly>False</SignAssembly>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
 	  <IsPublishable>True</IsPublishable>
@@ -12,10 +13,6 @@
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="ClosedXML" Version="0.102.3" />
-		<PackageReference Include="Costura.Fody" Version="5.7.0">
-		  <PrivateAssets>all</PrivateAssets>
-		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
 		<PackageReference Include="EPPlus" Version="7.2.2" />
 		<PackageReference Include="Microsoft.CrmSdk.XrmTooling.CoreAssembly" Version="9.1.1.65" />
 	</ItemGroup>
@@ -31,5 +28,6 @@
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>
+
 	
 </Project>

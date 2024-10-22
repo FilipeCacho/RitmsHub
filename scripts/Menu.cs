@@ -36,7 +36,6 @@ namespace RitmsHub.Scripts
 
     class MenuHandler
     {
-
         private List<BuUserDomains> buUserDomainsList;
         private CancellationTokenSource _cts;
 
