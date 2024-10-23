@@ -12,7 +12,7 @@ To summarize, the console is safe to use and won’t cause significant disruptio
 
 ## Important Notes
 
-This program revolves around a file called **dataCenter.xlsx**. This file has 3 worksheets:
+This program revolves around a file called **dataCenter.xlsx** that can be found in the root of the project folder. This file has 3 worksheets:
 
 - **Login**: Contains your connection settings. You must change the **Username and Password** columns for each environment you want to access. **Do not modify any other columns, as they contain necessary info to connect to Microsoft CRM.**
 - **Create Teams**: This worksheet is where you input the information for the teams you want to create. Upon opening the sheet for the first time, rows 1 and 2 contain placeholder information, which should be removed. These placeholders simply show how to structure your data.
@@ -40,6 +40,8 @@ After running the project, a menu with several options is presented:
   - If the BU doesn’t exist, it's created with the details from the worksheet.
   - The system then creates the team restricted by the indicated contractor. If the team already exists, any non-matching information is updated.
   - Finally, a proprietary team is created and associated with the respective BU. Again, if the team exists, it is updated based on the worksheet information.
+
+![Main Console](./assets/images/createBU.png)
   
 - **Option 2**: Retrieves all active users from the teams listed in the **Create Teams** worksheet. It removes duplicates and displays only currently enabled users in the console, also generating Excel files for each BU in the **Generated Excels** folder in your Downloads. This list is retained in memory for subsequent operations.
   
@@ -47,11 +49,15 @@ After running the project, a menu with several options is presented:
 
 - **Option 4**: Uses the **contractor** column in **Create Teams** worksheet to **create views for Work Orders and Notifications** to run flows in XRM Toolbox. **The views are restricted to the specified contractor**. After creating the query, you can name it and verify the view in Dynamics or run the workflow in XRM Toolbox. The project makes a single workoder and notification view for all the teams being processed, meaning instead of making a seperate view for each team, the code puts all the teams being processed into a single view but also ensuring the query in the view is correctly organized so the correct data is feteched and processed.
 
+![Main Console](./assets/images/creatingView.png)
+
 - **Option 5**: Ensures that users have access restricted by the correct contractor. If their current BU isn’t restricted, this option updates it accordingly and ensures their access is properly limited.
 
-  ### Other flows
+ ### Other flows
 
 - **Option 6**: Assigns minimum roles and teams based on whether the user is in the EU or NA. If the user is an internal EU user, for example, they are assigned **Equipo conocimiento personal Interno** and the **RESCO Archive Read** role. It asks if you want to assign RESCO, and if so, the role and team are assigned. However, **this doesn’t update the user in Woodford**, which must be done manually. If the user is a intern it will also assign them a SAP login if they don't have one. In the end it will also run the necessary workflow to activate any user, if it shows success it means the user was not activated, if it shows an error it means the user was already activated
+
+![Main Console](./assets/images/normalizeUser.png)
 
 - **Option 7**: A development-only feature that displays a list of workflows a user can run (not for normal use).
 
@@ -62,6 +68,8 @@ After running the project, a menu with several options is presented:
 - **Option 10**: Assigns teams from the **Assign Teams** worksheet. It's a blind assign—teams already assigned to a user are skipped.
 
 - **Option 11**: Displays a user’s BU, teams, and roles. You can compare this with another user’s information, with common permissions highlighted.
+
+![Main Console](./assets/images/compareUsers.png)
 
 - **Option 12**: Attempts to release table locks caused by an unexpected error when running **Option 1**. This is a best-effort approach with no guaranteed results. It should only be used in emergencies when BU-related errors occur.
 
