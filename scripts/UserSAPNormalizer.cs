@@ -126,7 +126,7 @@ namespace RitmsHub.Scripts
             };
 
             serviceClient.Update(systemUserUpdate);
-            Console.WriteLine($"Linked existing atos_usuarios record to systemuser for {systemUser.GetAttributeValue<string>("domainname")}");
+            Console.WriteLine($"Sucefully updated user's SAP credentials");
         }
 
         private static void CreateAndLinkAtosUsuarios(UserNormalizationResult result, Entity systemUser, CrmServiceClient serviceClient)
@@ -156,7 +156,7 @@ namespace RitmsHub.Scripts
                 };
 
                 serviceClient.Update(systemUserUpdate);
-                Console.WriteLine($"Linked new atos_usuarios record to systemuser for {result.Username}");
+                Console.WriteLine($"Sucefully updated user's SAP credentials");
             }
             catch (Exception ex)
             {

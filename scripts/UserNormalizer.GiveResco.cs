@@ -24,7 +24,7 @@ namespace RitmsHub.Scripts
                         await EnsureUserHasTeams(user, CodesAndRoles.RescoTeamEU);
                         await EnsureUserHasRoles(user, CodesAndRoles.RescoRole);
 
-                        Console.WriteLine("\n RESCO role and team were given to the user");
+                        Console.WriteLine("\nRESCO role and team were given to the user");
 
 
                     }

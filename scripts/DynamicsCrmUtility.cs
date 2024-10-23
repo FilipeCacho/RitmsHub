@@ -54,13 +54,9 @@ namespace RitmsHub.Scripts
                     // Display error message using LogMessage
                     Console.ForegroundColor = ConsoleColor.Red;
                     LogMessage(errorMessage, "ERROR");
+                    LogMessage($"Detailed Error: {cachedServiceClient.LastCrmError}", "ERROR");
 
-                    // Wait for user input
-                    Console.WriteLine("\nPress any key to close the console..");
-                    Console.ReadKey();
-                    Environment.Exit(0);
-
-                    return null;
+                    throw new InvalidOperationException(errorMessage);
                 }
             }
             return cachedServiceClient;

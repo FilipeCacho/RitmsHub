@@ -10,43 +10,58 @@ using System.ServiceModel;
 
 namespace RitmsHub.Scripts
 {
+    public class UserNormalizationResult
+    {
+        public string Username { get; set; }
+        public string Name { get; set; }
+        public bool IsInternal { get; set; }
+    }
+
     public class RunNewUserWorkFlow
     {
+        private static void ConfigureSecurityProtocol()
+        {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+        }
+
         public static async Task ExecuteWorkflowForUsersAsync(List<UserNormalizationResult> users)
         {
             try
             {
                 ConfigureSecurityProtocol();
+                DynamicsCrmUtility.ResetConnection();
+                var serviceClient = DynamicsCrmUtility.CreateCrmServiceClient();
 
-                string connectionString = DynamicsCrmUtility.CreateConnectionString();
-
-                using var serviceClient = DynamicsCrmUtility.CreateCrmServiceClient();
-
-                if (serviceClient is null || !serviceClient.IsReady)
+                if (serviceClient == null || !serviceClient.IsReady)
                 {
-                    Console.WriteLine($"Failed to connect. Error: {serviceClient.LastCrmError}");
-                    Console.WriteLine($"Detailed error: {serviceClient.LastCrmException?.ToString()}");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"CRM service client is not ready. {serviceClient?.LastCrmError}");
+                    Console.ResetColor();
                     return;
                 }
 
-                //Console.WriteLine($"Connected successfully to {serviceClient.ConnectedOrgUniqueName}\n");
+                // Query for the workflow
+                var query = new QueryExpression("workflow")
+                {
+                    ColumnSet = new ColumnSet("workflowid", "name", "statecode", "statuscode"),
+                    Criteria = new FilterExpression(LogicalOperator.And)
+                };
 
-                // Retrieve the workflow
-                var workflow = await RetrieveWorkflowAsync(serviceClient, "Usuario-Proceso para crear un recurso desde el usuario");
+                query.Criteria.AddCondition("name", ConditionOperator.Equal, CodesAndRoles.NewUserWorkflow);
+                query.Criteria.AddCondition("type", ConditionOperator.Equal, 1);
+                query.Criteria.AddCondition("category", ConditionOperator.Equal, 0);
+                query.Criteria.AddCondition("statecode", ConditionOperator.Equal, 1);
 
-                if (workflow == null)
+                var workflowResults = serviceClient.RetrieveMultiple(query);
+                if (workflowResults?.Entities == null || !workflowResults.Entities.Any())
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Workflow not found or not in a published state.");
-                    Console.WriteLine("Press any key to return to the main menu");
                     Console.ResetColor();
-                    Console.ReadKey();
                     return;
                 }
 
-                Console.ForegroundColor = ConsoleColor.Blue;
-                Console.WriteLine($"\nFound workflow: {workflow.GetAttributeValue<string>("name")}");
-                Console.ResetColor();
+                var workflow = workflowResults.Entities.First();
 
                 foreach (var user in users)
                 {
@@ -57,179 +72,88 @@ namespace RitmsHub.Scripts
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"An error occurred: {ex.Message}");
-                Console.WriteLine($"Stack Trace: {ex.StackTrace}");
                 Console.ResetColor();
-
-                Console.ForegroundColor = ConsoleColor.Blue;
-                Console.WriteLine("\nPress any key to return to the main menu");
-                Console.ResetColor();
-                Console.ReadKey();
             }
         }
 
         private static async Task ProcessUserWorkflowAsync(CrmServiceClient serviceClient, Entity workflow, UserNormalizationResult user)
         {
-            var systemUser = await RetrieveSystemUserAsync(user.Username, serviceClient);
+            // First get the system user to get their ID
+            var systemUser = await RetrieveSystemUserAsync(serviceClient, user.Username);
             if (systemUser == null)
             {
-                Console.WriteLine($"System user not found for {user.Username}. Skipping processing.");
-
-                Console.WriteLine("Press any key to return to the main menu");
-                Console.ReadKey();
-
+                Console.WriteLine($"System user not found for {user.Username}");
                 return;
             }
 
-            var mailbox = await RetrieveUserMailboxAsync(systemUser.Id, serviceClient);
-            string mailboxName = mailbox?.GetAttributeValue<string>("name");
-
-            if (string.IsNullOrEmpty(mailboxName))
-            {
-                Console.WriteLine($"Not found for user: {user.Username}. Skipping processing.");
-
-                Console.WriteLine("Press any key to return to the main menu");
-                Console.ReadKey();
-
-                return;
-            }
-
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine($"Attempting to execute workflow for user: {user.Username}, {mailboxName}");
-            Console.ResetColor();
-
-            var (success, errorMessage) = await ExecuteWorkflowAsync(serviceClient, workflow.Id, systemUser.Id);
-
-            if (success)
-            {
-                Console.WriteLine($"Workflow executed successfully for user: {user.Name}, Username: {user.Username}");
-
-                Console.WriteLine("\nPress any key to return to the main menu");
-                Console.ReadKey();
-            }
-            else if (errorMessage.Contains("There is already another resource record associated to this user"))
-            {
-                Console.WriteLine($"User: {user.Username} is already registered.");
-
-                Console.WriteLine("\nPress any key to return to the main menu");
-                Console.ReadKey();
-            }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"Workflow execution failed. Error: {errorMessage}");
-                Console.WriteLine("This is ok means the user is already is already activated");
-
-                Console.ForegroundColor = ConsoleColor.Blue;
-                Console.WriteLine("\nPress any key to return to the main menu");
-                Console.ResetColor();
-
-                Console.ReadKey();
-            }
-        }
-
-        private static async Task<Entity> RetrieveWorkflowAsync(IOrganizationService service, string workflowName)
-        {
-            var query = new QueryExpression("workflow")
-            {
-                ColumnSet = new ColumnSet("workflowid", "name", "statecode", "statuscode"),
-                Criteria = new FilterExpression()
-            };
-
-            query.Criteria.AddCondition("name", ConditionOperator.Equal, workflowName);
-            query.Criteria.AddCondition("type", ConditionOperator.Equal, 1); // Definition
-            query.Criteria.AddCondition("category", ConditionOperator.Equal, 0); // Process
-            query.Criteria.AddCondition("statecode", ConditionOperator.Equal, 1); // Active
-
-            EntityCollection results = await Task.Run(() => service.RetrieveMultiple(query));
-
-            return results.Entities.FirstOrDefault();
-        }
-
-        private static async Task<(bool Success, string ErrorMessage)> ExecuteWorkflowAsync(IOrganizationService service, Guid workflowId, Guid userId)
-        {
             try
             {
                 var executeWorkflowRequest = new OrganizationRequest("ExecuteWorkflow")
                 {
-                    ["WorkflowId"] = workflowId,
-                    ["EntityId"] = userId
+                    ["WorkflowId"] = workflow.Id,
+                    ["EntityId"] = systemUser.Id
                 };
 
-                var result = await Task.Run(() =>
+                // Execute the workflow and handle the exception directly
+                await Task.Run(() =>
                 {
                     try
                     {
-                        service.Execute(executeWorkflowRequest);
-                        return (true, (string)null);
+                        serviceClient.Execute(executeWorkflowRequest);
+                        Console.WriteLine($"Workflow executed successfully for user: {user.Name}, Username: {user.Username}");
                     }
-                    catch (FaultException<OrganizationServiceFault> ex)
+                    catch (FaultException<OrganizationServiceFault> ex) when (
+                        ex.Message.Contains("Ya hay otro registro de recurso asociado a este usuario") ||
+                        ex.Message.Contains("There is already another resource record associated to this user"))
                     {
-                        return (false, ex.Message);
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.WriteLine("\nRunning workflow to activate user");
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine($"User {user.Username} is already activated (Resource record exists)");
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("\nPress any key to continue");
+                        Console.ResetColor();
+                        Console.ReadLine();
+                    }
+                    catch (Exception ex)
+                    {
+                        throw; // Rethrow other exceptions to be caught by outer catch block
                     }
                 });
-
-                return result;
             }
             catch (Exception ex)
             {
-                return (false, ex.Message);
+                // Handle any other unexpected errors
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"Error executing workflow for {user.Username}: {ex.Message}");
+                Console.ResetColor();
             }
         }
 
-        private static async Task<Entity> RetrieveSystemUserAsync(string username, CrmServiceClient serviceClient)
+        private static async Task<Entity> RetrieveSystemUserAsync(CrmServiceClient serviceClient, string username)
         {
-            var query = new QueryExpression("systemuser")
+            try
             {
-                ColumnSet = new ColumnSet("systemuserid", "domainname", "isdisabled"),
-                Criteria = new FilterExpression
+                var query = new QueryExpression("systemuser")
                 {
-                    Conditions =
+                    ColumnSet = new ColumnSet("systemuserid", "domainname"),
+                    Criteria = new FilterExpression
                     {
-                        new ConditionExpression("domainname", ConditionOperator.Like, $"%{username}%")
+                        Conditions =
+                        {
+                            new ConditionExpression("domainname", ConditionOperator.Like, $"%{username}%")
+                        }
                     }
-                }
-            };
+                };
 
-            EntityCollection result = await Task.Run(() => serviceClient.RetrieveMultiple(query));
-
-            if (result.Entities.Count > 1)
-            {
-                Console.WriteLine($"Multiple users found for username: {username}. Selecting the non-disabled user.");
-                return result.Entities.FirstOrDefault(e => e.GetAttributeValue<bool>("isdisabled") == false);
+                var result = serviceClient.RetrieveMultiple(query);
+                return result.Entities.FirstOrDefault();
             }
-
-            return result.Entities.FirstOrDefault();
-        }
-
-        private static async Task<Entity> RetrieveUserMailboxAsync(Guid userId, CrmServiceClient serviceClient)
-        {
-            var query = new QueryExpression("mailbox")
+            catch (Exception ex)
             {
-                ColumnSet = new ColumnSet("mailboxid", "name"),
-                Criteria = new FilterExpression
-                {
-                    Conditions =
-                    {
-                        new ConditionExpression("regardingobjectid", ConditionOperator.Equal, userId)
-                    }
-                }
-            };
-
-            EntityCollection result = await Task.Run(() => serviceClient.RetrieveMultiple(query));
-
-            return result.Entities.FirstOrDefault();
+                Console.WriteLine($"Error retrieving system user: {ex.Message}");
+                return null;
+            }
         }
-
-        private static void ConfigureSecurityProtocol()
-        {
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
-        }
-    }
-
-    public class UserNormalizationResult
-    {
-        public string Username { get; set; }
-        public string Name { get; set; }
-        public bool IsInternal { get; set; }
     }
 }
