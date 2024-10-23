@@ -65,4 +65,4 @@ After running the project, a menu with several options is presented:
 
 - **Option 13**: Switches between environments by fetching your corresponding login details from the **Login** worksheet.
 
-- **Option 0**: Safely closes the console at any time, as long as no information is being fetched or uploaded to Dynamics.
+- **Option 0**: Safely closes the console, the console can be closed at any time safely when it's not feetching or uploading information to dynamics, this is just the press one key option
