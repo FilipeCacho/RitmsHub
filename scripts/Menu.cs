@@ -320,8 +320,10 @@ namespace RitmsHub.Scripts
             }
             else
             {
-                Console.WriteLine("You must run Option 2 first");
-                Console.WriteLine("Press any key to return to the main menu");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("You must run Option 2 first, if you already run it then it means there is no users to process");
+                Console.ResetColor();
+                Console.WriteLine("\nPress any key to return to the main menu");
                 Console.ReadKey();
             }
 
@@ -365,7 +367,7 @@ namespace RitmsHub.Scripts
             }
             else
             {
-                Console.WriteLine("You must run Option 2 first to extract users from teams.");
+                Console.WriteLine("You must run Option 2 first to extract users from teams, if you already run it then it means there is no users to process");
                 Console.WriteLine("Press any key to return to the main menu");
                 Console.ReadKey();
             }

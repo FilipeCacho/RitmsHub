@@ -196,9 +196,11 @@ namespace RitmsHub.Scripts
             string input;
             do
             {
+                Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine("Do you want to extract the users from these BUs and their corresponding general Team (the Contrata contrata Team)?");
                 Console.WriteLine("Each BU-Team pair will have its own excel file inside the 'generated excels' folder in your Downloads folder\n");
                 Console.WriteLine("The users from each BU and it's general team will be processed, duplicates will be removed and only active users will be included\n");
+                Console.ResetColor();
                 Console.Write("Enter your choice (y/n): ");
                 input = Console.ReadLine().ToLower();
 

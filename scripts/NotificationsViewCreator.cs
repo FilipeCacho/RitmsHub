@@ -35,7 +35,10 @@ namespace RitmsHub.scripts
             DynamicsCrmUtility.LogMessage("Generated FetchXML Query for Notifications:");
             DynamicsCrmUtility.LogMessage(fetchXml);
 
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("\nDo you want to save this query as a new personal Notifications view? (y/n): ");
+            Console.ResetColor();
+
             if (Console.ReadLine().Trim().ToLower() == "y")
             {
                 Console.Write("Enter a name for the new personal view: ");

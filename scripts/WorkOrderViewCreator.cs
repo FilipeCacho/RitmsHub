@@ -37,6 +37,7 @@ namespace RitmsHub.scripts
             DynamicsCrmUtility.LogMessage("Generated FetchXML Query:");
             DynamicsCrmUtility.LogMessage(fetchXml);
 
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("\nDo you want to save this query as a new personal Workorder view? (y/n): ");
             if (Console.ReadLine().Trim().ToLower() == "y")
             {
@@ -45,7 +46,7 @@ namespace RitmsHub.scripts
 
                 await ConnectToCrmAsync();
                 await SavePersonalViewAsync(fetchXml, viewName);
-                Console.WriteLine("Press any key to continue");
+                Console.WriteLine("\n Press any key to continue");
                 Console.ReadKey();
             }
             else
@@ -176,7 +177,7 @@ namespace RitmsHub.scripts
             try
             {
                 Guid viewId = await Task.Run(() => service.Create(userQuery));
-                DynamicsCrmUtility.LogMessage($"\n\nPersonal view '{viewName}' created successfully with ID: {viewId}");
+                DynamicsCrmUtility.LogMessage($"\n\nPersonal view '{viewName}' created successfully with ID: {viewId}\n");
             }
             catch (Exception ex)
             {
