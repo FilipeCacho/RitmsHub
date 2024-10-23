@@ -65,7 +65,7 @@ After running the project, a menu with several options is presented:
 
 - **Option 9**: Stores a user’s roles in memory while you change their BU via the web interface. When the BU is updated, their saved roles can be reapplied.
 
-![Main Console](./assets/images/holdRoles.png)
+![Main Console](./assets/images/holdRoles.png?v=2)
 
 - **Option 10**: Assigns teams from the **Assign Teams** worksheet. It's a blind assign—teams already assigned to a user are skipped.
 
