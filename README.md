@@ -49,7 +49,7 @@ After running the project, a menu with several options is presented:
 
   ### Other flows
 
-- **Option 6**: Assigns minimum roles and teams based on whether the user is in the EU or NA. If the user is an internal EU user, for example, they are assigned **Equipo conocimiento personal Interno** and the **RESCO Archive Read** role. It asks if you want to assign RESCO, and if so, the role and team are assigned. However, **this doesn’t update the user in Woodford**, which must be done manually.
+- **Option 6**: Assigns minimum roles and teams based on whether the user is in the EU or NA. If the user is an internal EU user, for example, they are assigned **Equipo conocimiento personal Interno** and the **RESCO Archive Read** role. It asks if you want to assign RESCO, and if so, the role and team are assigned. However, **this doesn’t update the user in Woodford**, which must be done manually. If the user is a intern it will also assign them a SAP login if they don't have one. In the end it will also run the necessary workflow to activate any user, it it shows success it means the user was not activated, if it shows an error it means the user was already activated
 
 - **Option 7**: A development-only feature that displays a list of workflows a user can run (not for normal use).
 
