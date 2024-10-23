@@ -31,6 +31,8 @@ My initial plan was to compile the code into a single executable, but this prese
 
 After running the project, a menu with several options is presented:
 
+![Main Console](./assets/images/mainConsole.png)
+
 ### Create Teams Flow
 
 - **Option 1**: Reads the information from the **Create Teams** worksheet, checks if it's properly formatted and complete, and displays the BU and teams that can be created. If the user confirms, the creation process begins:
