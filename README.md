@@ -43,7 +43,7 @@ After running the project, a menu with several options is presented:
   
 - **Option 3**: (Requires **Option 2** to run first) After extracting users from each BU, it assigns the newly created contractor-restricted team to the respective users.
 
-- **Option 4**: Uses the **contractor** column in **Create Teams** worksheet to **create views for Work Orders and Notifications** to run flows in XRM Toolbox. **The views are restricted to the specified contractor**. After creating the query, you can name it and verify the view in Dynamics or run the workflow in XRM Toolbox.
+- **Option 4**: Uses the **contractor** column in **Create Teams** worksheet to **create views for Work Orders and Notifications** to run flows in XRM Toolbox. **The views are restricted to the specified contractor**. After creating the query, you can name it and verify the view in Dynamics or run the workflow in XRM Toolbox. The project makes a single workoder and notification view for all the teams being processed, meaning instead of making a seperate view for each team, the code puts all the teams being processed into a single view but also ensuring the query in the view is correctly organized so the correct data is feteched and processed.
 
 - **Option 5**: Ensures that users have access restricted by the correct contractor. If their current BU isn’t restricted, this option updates it accordingly and ensures their access is properly limited.
 
