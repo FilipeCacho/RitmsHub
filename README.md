@@ -47,6 +47,8 @@ After running the project, a menu with several options is presented:
 
 - **Option 5**: Ensures that users have access restricted by the correct contractor. If their current BU isn’t restricted, this option updates it accordingly and ensures their access is properly limited.
 
+  ### Other flows
+
 - **Option 6**: Assigns minimum roles and teams based on whether the user is in the EU or NA. If the user is an internal EU user, for example, they are assigned **Equipo conocimiento personal Interno** and the **RESCO Archive Read** role. It asks if you want to assign RESCO, and if so, the role and team are assigned. However, **this doesn’t update the user in Woodford**, which must be done manually.
 
 - **Option 7**: A development-only feature that displays a list of workflows a user can run (not for normal use).
