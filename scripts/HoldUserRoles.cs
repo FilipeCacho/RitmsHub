@@ -22,7 +22,9 @@ namespace RitmsHub.Scripts
             {
                 await ConnectToCrmAsync();
                 Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine("\nThis code will retrieve and manage user roles.");
+                Console.ResetColor();
 
                 var user = await _userRetriever.PromptAndRetrieveUser("\nEnter the user's name or username (or 0 to exit): ");
 
@@ -51,7 +53,8 @@ namespace RitmsHub.Scripts
                 Console.WriteLine("Options:");
                 Console.WriteLine("1. Reapply saved roles");
                 Console.WriteLine("2. Exit");
-                Console.Write("Enter your choice (1 or 2): ");
+                Console.ResetColor();
+                Console.Write("\nEnter your choice (1 or 2): ");
 
                 string choice = Console.ReadLine();
                 if (choice == "1")
