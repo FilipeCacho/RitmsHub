@@ -41,7 +41,7 @@ After running the project, a menu with several options is presented:
   - The system then creates the team restricted by the indicated contractor. If the team already exists, any non-matching information is updated.
   - Finally, a proprietary team is created and associated with the respective BU. Again, if the team exists, it is updated based on the worksheet information.
 
-![Main Console](./assets/images/createBU.png)
+![Creating BU](./assets/images/createBU.png)
   
 - **Option 2**: Retrieves all active users from the teams listed in the **Create Teams** worksheet. It removes duplicates and displays only currently enabled users in the console, also generating Excel files for each BU in the **Generated Excels** folder in your Downloads. This list is retained in memory for subsequent operations.
   
@@ -49,7 +49,7 @@ After running the project, a menu with several options is presented:
 
 - **Option 4**: Uses the **contractor** column in **Create Teams** worksheet to **create views for Work Orders and Notifications** to run flows in XRM Toolbox. **The views are restricted to the specified contractor**. After creating the query, you can name it and verify the view in Dynamics or run the workflow in XRM Toolbox. The project makes a single workoder and notification view for all the teams being processed, meaning instead of making a seperate view for each team, the code puts all the teams being processed into a single view but also ensuring the query in the view is correctly organized so the correct data is feteched and processed.
 
-![Main Console](./assets/images/creatingView.png)
+![View Creation](./assets/images/creatingView.png)
 
 - **Option 5**: Ensures that users have access restricted by the correct contractor. If their current BU isn’t restricted, this option updates it accordingly and ensures their access is properly limited.
 
@@ -65,7 +65,7 @@ After running the project, a menu with several options is presented:
 
 - **Option 9**: Stores a user’s roles in memory while you change their BU via the web interface. When the BU is updated, their saved roles can be reapplied.
 
-![Main Console](./assets/images/holdUserRoles.png)
+![Holds User Roles](./assets/images/holdUserRoles.png)
 
 - **Option 10**: Assigns teams from the **Assign Teams** worksheet. It's a blind assign—teams already assigned to a user are skipped.
 
