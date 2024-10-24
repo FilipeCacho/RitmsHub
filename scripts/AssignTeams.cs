@@ -16,6 +16,9 @@ namespace RitmsHub.Scripts
 
         public async Task ProcessAssignTeamsAsync()
         {
+            //list to store disabled users to make sure they are not repeated when processing teams
+            List<string> disabledUser = new List<string>();
+
             try
             {
                 await ConnectToCrmAsync();
@@ -32,7 +35,7 @@ namespace RitmsHub.Scripts
 
                 foreach (var data in assignTeamDataList)
                 {
-                    await ProcessUserAsync(data.Username, data.TeamName);
+                    await ProcessUserAsync(data.Username, data.TeamName, disabledUser);
                 }
 
                 Console.ForegroundColor = ConsoleColor.Green;
@@ -95,14 +98,21 @@ namespace RitmsHub.Scripts
             return Task.CompletedTask;
         }
 
-        private async Task ProcessUserAsync(string userIdentifier, string teamName)
+        private async Task ProcessUserAsync(string userIdentifier, string teamName, List<string> disabledUser)
         {
+            // if a user is disabled the code just exists, 
+            if (disabledUser.Contains(userIdentifier))
+            {
+                return;
+            }
+
             var users = await _userRetriever.FindUsersAsync(userIdentifier);
             if (users.Count == 0)
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine($"User {userIdentifier} not found.");
                 Console.ResetColor();
+                disabledUser.Add(userIdentifier); // adds user to disabled list to avoid processing it again if it's disabled
                 return;
             }
 
@@ -110,17 +120,15 @@ namespace RitmsHub.Scripts
 
             if (user.GetAttributeValue<bool>("isdisabled"))
             {
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine($"User {userIdentifier} (disabled) - skipped...");
-                Console.ResetColor();
+                disabledUser.Add(userIdentifier); // adds user to disabled list to avoid processing it again if it's disabled
                 return;
             }
 
             string username = user.GetAttributeValue<string>("domainname").Split('@')[0];
             Console.WriteLine($"User {username} (active) - assigning team:");
-
             await EnsureUserHasTeam(user, teamName);
         }
+
 
         private async Task EnsureUserHasTeam(Entity user, string teamName)
         {

@@ -129,7 +129,7 @@ namespace RitmsHub.Scripts
 
         public async Task<EntityCollection> GetUserTeamsAsync(Guid userId)
         {
-            // First, retrieve the user's Business Unit
+            // Retrieve the user's Business Unit
             var userQuery = new QueryExpression("systemuser")
             {
                 ColumnSet = new ColumnSet("businessunitid"),
@@ -164,7 +164,7 @@ namespace RitmsHub.Scripts
             var buResult = await _service.RetrieveMultipleAsync(buQuery);
             var businessUnitName = buResult.Entities[0]["name"].ToString();
 
-            // Now, retrieve the user's teams, including the Business Unit ID for each team
+            // Retrieve the user's teams, including the Business Unit ID for each team
             var teamQuery = new QueryExpression("team")
             {
                 ColumnSet = new ColumnSet("name", "businessunitid"),

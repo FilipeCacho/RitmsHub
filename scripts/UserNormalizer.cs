@@ -184,9 +184,12 @@ namespace RitmsHub.Scripts
         {
             if (user.Contains("businessunitid") && ((EntityReference)user["businessunitid"]).Name.Equals("edpr", StringComparison.OrdinalIgnoreCase))
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("\nWarning: The user's business unit is set to 'edpr'.");
                 Console.WriteLine("This means this user with this BU and if it has roles can see all parks");
-                Console.WriteLine("Are you sure you want to continue? (y/n)");
+                Console.ResetColor();
+
+                Console.WriteLine("\nAre you sure you want to continue? (y/n)");
 
                 return Console.ReadLine().Trim().ToLower() == "y";
             }
