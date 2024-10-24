@@ -1,5 +1,5 @@
 # What is it 
-This project consists in a C# console that uses the official Microsoft SDK to interact with a specific instance of Microsoft Dynamics and it's particularities, the goal is to speed up automate repetetive tasks that sometimes can take a few hours and complete them in minutes. The focus of this console is to speed up new user's access to the platform by assigning them the minimum necessary roles and considerably speed up the creation of new teams, a task that can be take sometime due to particularities of this platform and it's complex bussiness logistic.
+This project consists in a C# console that uses the official Microsoft SDK to interact with a specific instance of Microsoft Dynamics and it's particularities, the goal is to speed up automate repetetive tasks that sometimes can take a few hours and complete them in minutes. The focus of this console is to speed up new user's access to the platform by assigning them the minimum necessary roles and considerably speed up the creation of new teams, a task that can take some time due to particularities of this platform and it's complex bussiness logistic.
 
 
 This project can be extended to automate and speed up almost any task be it data manipulation or data insertation/deletion in Microsoft Dynamics.
