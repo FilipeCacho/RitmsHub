@@ -22,9 +22,9 @@ To summarize, the console is safe to use and won’t cause significant disruptio
 This program revolves around a file called **dataCenter.xlsx** that can be found in the root of the project folder. This file has 3 worksheets:
 
 - **Login**: Contains your connection settings. You must change the **Username and Password** columns for each environment you want to access. **Do not modify any other columns, as they contain necessary info to connect to Microsoft CRM.**
-- **Create Teams**: This worksheet is where you input the information for the teams you want to create. Upon opening the sheet for the first time, rows 1 and 2 contain placeholder information, which should be removed. These placeholders simply show how to structure your data.
+- **Create Teams**: This worksheet is where you input the information for the teams you want to create. Upon opening the sheet for the first time, rows 1 and 2 contain placeholder information, which should be removed **(but don't modify the header)**. These placeholders simply show how to structure your data.
   - **Columns A-D** must be filled out with the required information, or else the team cannot be created. **Column E** is used to run flows for Work Orders and Notifications, but it can be filled with any value if you don’t plan on running these flows.
-- **Assign Teams**: This worksheet allows you to assign existing teams to active users. Specify the username and the team to be assigned. For example, if you need to give a user access to a team restricted by a contractor, you must assign both the **master data team (equipo dados maestros)** and the **Contrata** team. The information in this sheet is placeholder and should be replaced.
+- **Assign Teams**: This worksheet allows you to assign existing teams to active users. Specify the username and the team to be assigned. For example, if you need to give a user access to a team restricted by a contractor, you must assign both the **master data team (equipo dados maestros)** and the **Contrata** team. The information in this sheet is placeholder and should be replaced **(but don't modify the header)**.
 
 ### Minor Details
 
