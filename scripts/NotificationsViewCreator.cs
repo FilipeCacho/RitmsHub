@@ -32,8 +32,8 @@ namespace RitmsHub.scripts
 
             Console.Clear();
             
-            DynamicsCrmUtility.LogMessage("Generated FetchXML Query for Notifications:");
-            DynamicsCrmUtility.LogMessage(fetchXml);
+            Console.WriteLine("Generated FetchXML Query for Notifications:");
+            Console.WriteLine(fetchXml);
 
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("\nDo you want to save this query as a new personal Notifications view? (y/n): ");
@@ -51,7 +51,7 @@ namespace RitmsHub.scripts
             }
             else
             {
-                DynamicsCrmUtility.LogMessage("Personal view creation cancelled.");
+                Console.WriteLine("Personal view creation cancelled.");
             }
         }
 
@@ -162,16 +162,16 @@ namespace RitmsHub.scripts
             try
             {
                 string connectionString = DynamicsCrmUtility.CreateConnectionString();
-                //DynamicsCrmUtility.LogMessage($"Attempting to connect with: {connectionString}");
+                //Console.WriteLine($"Attempting to connect with: {connectionString}");
 
                 var serviceClient = DynamicsCrmUtility.CreateCrmServiceClient();
                 service = serviceClient;
 
-                //DynamicsCrmUtility.LogMessage($"Connected successfully to {serviceClient.ConnectedOrgUniqueName}");
+                //Console.WriteLine($"Connected successfully to {serviceClient.ConnectedOrgUniqueName}");
             }
             catch (Exception ex)
             {
-                DynamicsCrmUtility.LogMessage($"Failed to connect to Dynamics CRM: {ex.Message}", "ERROR");
+                Console.WriteLine($"Failed to connect to Dynamics CRM: {ex.Message}", "ERROR");
                 throw;
             }
 
@@ -190,11 +190,11 @@ namespace RitmsHub.scripts
             try
             {
                 Guid viewId = await Task.Run(() => service.Create(userQuery));
-                DynamicsCrmUtility.LogMessage($"\n\nPersonal view '{viewName}' created successfully with ID: {viewId}");
+                Console.WriteLine($"\n\nPersonal view '{viewName}' created successfully with ID: {viewId}");
             }
             catch (Exception ex)
             {
-                DynamicsCrmUtility.LogMessage($"Error creating personal view: {ex.Message}", "ERROR");
+                Console.WriteLine($"Error creating personal view: {ex.Message}", "ERROR");
             }
         }
 

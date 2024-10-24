@@ -38,7 +38,7 @@ namespace RitmsHub.Scripts
             }
             catch (Exception ex)
             {
-                DynamicsCrmUtility.LogMessage($"An error occurred in ProcessUsersAsync: {ex.Message}", "ERROR");
+                Console.WriteLine($"An error occurred in ProcessUsersAsync: {ex.Message}", "ERROR");
                 throw;
             }
         }
@@ -53,14 +53,14 @@ namespace RitmsHub.Scripts
             try
             {
                 string connectionString = DynamicsCrmUtility.CreateConnectionString();
-                //DynamicsCrmUtility.LogMessage($"Attempting to connect with: {connectionString}");
+                //Console.WriteLine($"Attempting to connect with: {connectionString}");
 
                 var serviceClient = DynamicsCrmUtility.CreateCrmServiceClient();
                 this.service = serviceClient;
             }
             catch (Exception ex)
             {
-                DynamicsCrmUtility.LogMessage($"An error occurred while connecting to CRM: {ex.Message}", "ERROR");
+                Console.WriteLine($"An error occurred while connecting to CRM: {ex.Message}", "ERROR");
                 throw;
             }
         }
@@ -107,11 +107,11 @@ namespace RitmsHub.Scripts
                             UserDomain = userDomain,
                             AssignedPark = buUserDomain.NewCreatedPark
                         });
-                        DynamicsCrmUtility.LogMessage($"User {userDomain} successfully processed for park {buUserDomain.NewCreatedPark}");
+                        Console.WriteLine($"User {userDomain} successfully processed for park {buUserDomain.NewCreatedPark}");
                     }
                     else
                     {
-                        DynamicsCrmUtility.LogMessage($"User {userDomain} could not be processed for park {buUserDomain.NewCreatedPark}. Check previous errors for details.", "WARNING");
+                        Console.WriteLine($"User {userDomain} could not be processed for park {buUserDomain.NewCreatedPark}. Check previous errors for details.", "WARNING");
                     }
                 }
             }
@@ -160,7 +160,7 @@ namespace RitmsHub.Scripts
                 EntityCollection userResults = await Task.Run(() => service.RetrieveMultiple(userQuery));
                 if (userResults.Entities.Count == 0)
                 {
-                    DynamicsCrmUtility.LogMessage($"User not found: {userDomain}", "WARNING");
+                    Console.WriteLine($"User not found: {userDomain}", "WARNING");
                     return false;
                 }
 
@@ -177,7 +177,7 @@ namespace RitmsHub.Scripts
                 EntityCollection contrataTeamResults = await Task.Run(() => service.RetrieveMultiple(contrataTeamQuery));
                 if (contrataTeamResults.Entities.Count == 0)
                 {
-                    DynamicsCrmUtility.LogMessage($"Contrata Contrata team not found: {contrataContrataTeam}", "WARNING");
+                    Console.WriteLine($"Contrata Contrata team not found: {contrataContrataTeam}", "WARNING");
                     return false;
                 }
 
@@ -206,12 +206,12 @@ namespace RitmsHub.Scripts
                             new Relationship("teammembership_association"),
                             new EntityReferenceCollection() { new EntityReference("systemuser", userId) }
                         ));
-                        DynamicsCrmUtility.LogMessage($"User {userDomain} successfully assigned to Contrata Contrata team {contrataContrataTeam}");
+                        Console.WriteLine($"User {userDomain} successfully assigned to Contrata Contrata team {contrataContrataTeam}");
                         contrataTeamAssigned = true;
                     }
                     catch (Exception ex)
                     {
-                        DynamicsCrmUtility.LogMessage($"Failed to assign user {userDomain} to Contrata Contrata team {contrataContrataTeam}: {ex.Message}", "ERROR");
+                        Console.WriteLine($"Failed to assign user {userDomain} to Contrata Contrata team {contrataContrataTeam}: {ex.Message}", "ERROR");
                         return false;
                     }
                 }
@@ -234,7 +234,7 @@ namespace RitmsHub.Scripts
                     EntityCollection newTeamResults = await Task.Run(() => service.RetrieveMultiple(newTeamQuery));
                     if (newTeamResults.Entities.Count == 0)
                     {
-                        DynamicsCrmUtility.LogMessage($"New team not found: {equipoContrata}", "WARNING");
+                        Console.WriteLine($"New team not found: {equipoContrata}", "WARNING");
                         return false;
                     }
 
@@ -261,30 +261,30 @@ namespace RitmsHub.Scripts
                                 new Relationship("teammembership_association"),
                                 new EntityReferenceCollection() { new EntityReference("systemuser", userId) }
                             ));
-                            DynamicsCrmUtility.LogMessage($"User {userDomain} successfully assigned to new team {equipoContrata}");
+                            Console.WriteLine($"User {userDomain} successfully assigned to new team {equipoContrata}");
                             return true;
                         }
                         catch (Exception ex)
                         {
-                            DynamicsCrmUtility.LogMessage($"Failed to assign user {userDomain} to new team {equipoContrata}: {ex.Message}", "ERROR");
+                            Console.WriteLine($"Failed to assign user {userDomain} to new team {equipoContrata}: {ex.Message}", "ERROR");
                             return false;
                         }
                     }
                     else
                     {
-                        DynamicsCrmUtility.LogMessage($"User {userDomain} is already a member of the new team {equipoContrata}");
+                        Console.WriteLine($"User {userDomain} is already a member of the new team {equipoContrata}");
                         return true;
                     }
                 }
                 else
                 {
-                    DynamicsCrmUtility.LogMessage($"User {userDomain} could not be assigned to new team {equipoContrata} because Contrata Contrata team assignment failed", "WARNING");
+                    Console.WriteLine($"User {userDomain} could not be assigned to new team {equipoContrata} because Contrata Contrata team assignment failed", "WARNING");
                     return false;
                 }
             }
             catch (Exception ex)
             {
-                DynamicsCrmUtility.LogMessage($"An error occurred while assigning user to team: {ex.Message}", "ERROR");
+                Console.WriteLine($"An error occurred while assigning user to team: {ex.Message}", "ERROR");
                 return false;
             }
         }

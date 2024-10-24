@@ -56,7 +56,7 @@ namespace RitmsHub.Scripts
             cancellationToken.ThrowIfCancellationRequested();
 
             string teamType = isProprietaryTeam ? "Proprietary" : "Standard";
-            DynamicsCrmUtility.LogMessage($"\nStarting {teamType} team creation/update process for team: '{team.TeamName.Trim()}'");
+            Console.WriteLine($"\nStarting {teamType} team creation/update process for team: '{team.TeamName.Trim()}'");
 
             var existingTeam = await GetExistingTeamAsync(team.TeamName.Trim(), cancellationToken);
             if (existingTeam != null)
@@ -172,8 +172,8 @@ namespace RitmsHub.Scripts
             };
 
             var newTeamId = await Task.Run(() => _crmServiceClient.Create(teamEntity), cancellationToken);
-            DynamicsCrmUtility.LogMessage($"New team created successfully. Team ID: {newTeamId}", "SUCCESS");
-            DynamicsCrmUtility.LogMessage($"Administrator '{team.AdministratorName}' assigned to team.", "SUCCESS");
+            Console.WriteLine($"New team created successfully. Team ID: {newTeamId}", "SUCCESS");
+            Console.WriteLine($"Administrator '{team.AdministratorName}' assigned to team.", "SUCCESS");
 
             // Assign roles to proprietary and standard teams alike
             if (team.TeamRoles != null && team.TeamRoles.Length > 0)
@@ -200,11 +200,11 @@ namespace RitmsHub.Scripts
                 businessUnitUpdate["atos_equipopropietarioidname"] = proprietaryTeamName;
 
                 await Task.Run(() => _crmServiceClient.Update(businessUnitUpdate));
-                DynamicsCrmUtility.LogMessage($"Business Unit updated with Proprietary Team information. BU ID: {businessUnitId}, Team ID: {proprietaryTeamId}", "SUCCESS");
+                Console.WriteLine($"Business Unit updated with Proprietary Team information. BU ID: {businessUnitId}, Team ID: {proprietaryTeamId}", "SUCCESS");
             }
             catch (Exception ex)
             {
-                DynamicsCrmUtility.LogMessage($"Error updating Business Unit with Proprietary Team: {ex.Message}", "ERROR");
+                Console.WriteLine($"Error updating Business Unit with Proprietary Team: {ex.Message}", "ERROR");
             }
         }
 
@@ -271,7 +271,7 @@ namespace RitmsHub.Scripts
             var result = await Task.Run(() => _crmServiceClient.RetrieveMultiple(query));
             if (result.Entities.Count == 0)
             {
-                DynamicsCrmUtility.LogMessage($"Role not found: {roleName}", "WARNING");
+                Console.WriteLine($"Role not found: {roleName}", "WARNING");
                 return null;
             }
 
@@ -298,7 +298,7 @@ namespace RitmsHub.Scripts
                 var existingAssignment = await Task.Run(() => _crmServiceClient.RetrieveMultiple(query));
                 if (existingAssignment.Entities.Count > 0)
                 {
-                    DynamicsCrmUtility.LogMessage($"Role '{roleName}' is already assigned to the team.", "INFO");
+                    Console.WriteLine($"Role '{roleName}' is already assigned to the team.", "INFO");
                     return;
                 }
 
@@ -313,11 +313,11 @@ namespace RitmsHub.Scripts
                 };
 
                 await Task.Run(() => _crmServiceClient.Execute(request));
-                DynamicsCrmUtility.LogMessage($"Role '{roleName}' assigned to team.", "SUCCESS");
+                Console.WriteLine($"Role '{roleName}' assigned to team.", "SUCCESS");
             }
             catch (Exception ex)
             {
-                DynamicsCrmUtility.LogMessage($"Error assigning role '{roleName}' to team: {ex.Message}", "ERROR");
+                Console.WriteLine($"Error assigning role '{roleName}' to team: {ex.Message}", "ERROR");
             }
         }
 
@@ -336,11 +336,11 @@ namespace RitmsHub.Scripts
                 };
 
                 await Task.Run(() => _crmServiceClient.Execute(request));
-                DynamicsCrmUtility.LogMessage($"Role '{roleName}' removed from team.", "SUCCESS");
+                Console.WriteLine($"Role '{roleName}' removed from team.", "SUCCESS");
             }
             catch (Exception ex)
             {
-                DynamicsCrmUtility.LogMessage($"Error removing role '{roleName}' from team: {ex.Message}", "ERROR");
+                Console.WriteLine($"Error removing role '{roleName}' from team: {ex.Message}", "ERROR");
             }
         }
 

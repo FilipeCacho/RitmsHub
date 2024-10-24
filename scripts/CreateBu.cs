@@ -77,7 +77,7 @@ namespace RitmsHub.Scripts
         {
             cancellationToken.ThrowIfCancellationRequested();
 
-            DynamicsCrmUtility.LogMessage($"Starting business unit creation/update process for: '{team.Bu.Trim()}'");
+            Console.WriteLine($"Starting business unit creation/update process for: '{team.Bu.Trim()}'");
 
             var existingBu = await GetExistingBusinessUnit(team.Bu.Trim(), cancellationToken);
             if (existingBu != null)
@@ -164,7 +164,7 @@ namespace RitmsHub.Scripts
 
         private async Task<bool> CreateNewBusinessUnitAsync(TransformedTeamData team, CancellationToken cancellationToken)
         {
-            DynamicsCrmUtility.LogMessage($"Creating new business unit: '{team.Bu.Trim()}'");
+            Console.WriteLine($"Creating new business unit: '{team.Bu.Trim()}'");
 
             var parentBuId = await DynamicsCrmUtility.GetBusinessUnitIdAsync(_crmServiceClient, team.PrimaryCompany, cancellationToken);
             var plannerGroupId = await GetPlannerGroupIdAsync(team.PlannerGroup, team.PlannerCenterName, cancellationToken);
@@ -185,7 +185,7 @@ namespace RitmsHub.Scripts
             };
 
             var newBuId = await Task.Run(() => _crmServiceClient.Create(buEntity), cancellationToken);
-            DynamicsCrmUtility.LogMessage($"New business unit created successfully. BU ID: {newBuId}", "SUCCESS");
+            Console.WriteLine($"New business unit created successfully. BU ID: {newBuId}", "SUCCESS");
 
             return true;
         }
@@ -228,7 +228,7 @@ namespace RitmsHub.Scripts
 
             if (result.Entities.Count == 0)
             {
-                DynamicsCrmUtility.LogMessage($"No Planner Group found for Code: {plannerGroupCode}, Planning Center: {planningCenterName}", "WARNING");
+                Console.WriteLine($"No Planner Group found for Code: {plannerGroupCode}, Planning Center: {planningCenterName}", "WARNING");
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("BU creation halted. No matching Planner Group found.");
                 Console.ResetColor();
@@ -236,7 +236,7 @@ namespace RitmsHub.Scripts
             }
             else if (result.Entities.Count > 1)
             {
-                DynamicsCrmUtility.LogMessage($"Multiple Planner Groups found for Code: {plannerGroupCode}, Planning Center: {planningCenterName}", "WARNING");
+                Console.WriteLine($"Multiple Planner Groups found for Code: {plannerGroupCode}, Planning Center: {planningCenterName}", "WARNING");
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("BU creation halted. Multiple matching Planner Groups found.");
                 Console.ResetColor();
@@ -284,7 +284,7 @@ namespace RitmsHub.Scripts
 
             if (result.Entities.Count == 0)
             {
-                DynamicsCrmUtility.LogMessage($"No Work Center found for Contractor Code: {contractorCode}, Planning Center: {planningCenterName}", "WARNING");
+                Console.WriteLine($"No Work Center found for Contractor Code: {contractorCode}, Planning Center: {planningCenterName}", "WARNING");
 
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("BU creation halted. No matching Work Center found.");
@@ -293,7 +293,7 @@ namespace RitmsHub.Scripts
             }
             else if (result.Entities.Count > 1)
             {
-                DynamicsCrmUtility.LogMessage($"Multiple Work Centers found for Contractor Code: {contractorCode}, Planning Center: {planningCenterName}", "WARNING");
+                Console.WriteLine($"Multiple Work Centers found for Contractor Code: {contractorCode}, Planning Center: {planningCenterName}", "WARNING");
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("BU creation halted. Multiple matching Work Centers found.");
                 Console.ResetColor();

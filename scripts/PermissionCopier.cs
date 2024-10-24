@@ -21,7 +21,7 @@ namespace RitmsHub.Scripts
         {
             if (!sourceUser.Contains("businessunitid"))
             {
-                DynamicsCrmUtility.LogMessage("Source user does not have a Business Unit assigned.", "WARNING");
+                Console.WriteLine("Source user does not have a Business Unit assigned.", "WARNING");
                 return;
             }
 
@@ -31,7 +31,7 @@ namespace RitmsHub.Scripts
                 Id = targetUser.Id,
                 ["businessunitid"] = new EntityReference("businessunit", sourceBuId)
             });
-            DynamicsCrmUtility.LogMessage("Business Unit copied successfully.");
+            Console.WriteLine("Business Unit copied successfully.");
         }
 
         public async Task CopyTeams(Entity sourceUser, Entity targetUser)
@@ -52,16 +52,21 @@ namespace RitmsHub.Scripts
                     try
                     {
                         await Task.Run(() => _service.Execute(addMembersRequest));
-                        DynamicsCrmUtility.LogMessage($"User added to team '{team.GetAttributeValue<string>("name")}'.", "SUCCESS");
+                        
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine($"User added to team '{team.GetAttributeValue<string>("name")}'.", "SUCCESS");
+                        Console.ResetColor();
                     }
                     catch (Exception ex)
                     {
-                        DynamicsCrmUtility.LogMessage($"Error adding user to team '{team.GetAttributeValue<string>("name")}': {ex.Message}", "ERROR");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine($"Error adding user to team '{team.GetAttributeValue<string>("name")}': {ex.Message}", "ERROR");
+                        Console.ResetColor();
                     }
                 }
             }
 
-            DynamicsCrmUtility.LogMessage("\nTeam memberships copied successfully.\n");
+            Console.WriteLine("\nTeam memberships copied successfully.\n");
         }
 
        public async Task CopyRoles(Entity sourceUser, Entity targetUser)
@@ -77,7 +82,7 @@ namespace RitmsHub.Scripts
 
                 if (equivalentRole == null)
                 {
-                    DynamicsCrmUtility.LogMessage($"No equivalent role found for '{sourceRole.GetAttributeValue<string>("name")}' in the target user's Business Unit.", "WARNING");
+                    Console.WriteLine($"No equivalent role found for '{sourceRole.GetAttributeValue<string>("name")}' in the target user's Business Unit.", "WARNING");
                     continue;
                 }
 
@@ -96,16 +101,16 @@ namespace RitmsHub.Scripts
                         };
 
                         await Task.Run(() => _service.Execute(request));
-                        DynamicsCrmUtility.LogMessage($"Role '{equivalentRole.GetAttributeValue<string>("name")}' assigned to user.", "SUCCESS");
+                        Console.WriteLine($"Role '{equivalentRole.GetAttributeValue<string>("name")}' assigned to user.", "SUCCESS");
                     }
                     catch (Exception ex)
                     {
-                        DynamicsCrmUtility.LogMessage($"Error assigning role '{equivalentRole.GetAttributeValue<string>("name")}' to user: {ex.Message}", "ERROR");
+                        Console.WriteLine($"Error assigning role '{equivalentRole.GetAttributeValue<string>("name")}' to user: {ex.Message}", "ERROR");
                     }
                 }
             }
 
-            DynamicsCrmUtility.LogMessage("Roles copying process completed.");
+            Console.WriteLine("Roles copying process completed.");
         }
 
         private async Task<Entity> FindEquivalentRoleInBusinessUnitAsync(Entity sourceRole, Guid targetBusinessUnitId)

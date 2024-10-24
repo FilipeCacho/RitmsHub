@@ -76,7 +76,7 @@ namespace RitmsHub.Scripts
             try
             {
                 string connectionString = DynamicsCrmUtility.CreateConnectionString();
-                //DynamicsCrmUtility.LogMessage($"Attempting to connect with: {connectionString}");
+                //Console.WriteLine($"Attempting to connect with: {connectionString}");
 
                 var serviceClient = new CrmServiceClient(connectionString);
 
@@ -87,11 +87,11 @@ namespace RitmsHub.Scripts
 
                 _service = serviceClient;
                 _userRetriever = new UserRetriever(_service);
-                //DynamicsCrmUtility.LogMessage($"Connected successfully to {serviceClient.ConnectedOrgUniqueName}");
+                //Console.WriteLine($"Connected successfully to {serviceClient.ConnectedOrgUniqueName}");
             }
             catch (Exception ex)
             {
-                DynamicsCrmUtility.LogMessage($"An error occurred while connecting to CRM: {ex.Message}", "ERROR");
+                Console.WriteLine($"An error occurred while connecting to CRM: {ex.Message}", "ERROR");
                 throw;
             }
 

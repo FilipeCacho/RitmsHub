@@ -161,8 +161,8 @@ namespace RitmsHub.Scripts
             }
             catch (Exception ex)
             {
-                DynamicsCrmUtility.LogMessage($"An error occurred: {ex.Message}", "ERROR");
-                DynamicsCrmUtility.LogMessage($"Stack Trace: {ex.StackTrace}", "ERROR");
+                Console.WriteLine($"An error occurred: {ex.Message}", "ERROR");
+                Console.WriteLine($"Stack Trace: {ex.StackTrace}", "ERROR");
             }
 
             return result;
@@ -184,10 +184,10 @@ namespace RitmsHub.Scripts
         {
             foreach (var team in dynamicTeams)
             {
-                DynamicsCrmUtility.LogMessage("\nTransformed Team Data:");
-                DynamicsCrmUtility.LogMessage($"bu: {team.Bu}");
-                DynamicsCrmUtility.LogMessage($"Equipa contrata Contrata: {team.EquipaContrataContrata}");
-                DynamicsCrmUtility.LogMessage($"Users will be stored in the file: {team.FileName}.xls\n");
+                Console.WriteLine("\nTransformed Team Data:");
+                Console.WriteLine($"bu: {team.Bu}");
+                Console.WriteLine($"Equipa contrata Contrata: {team.EquipaContrataContrata}");
+                Console.WriteLine($"Users will be stored in the file: {team.FileName}.xls\n");
             }
         }
 
@@ -293,7 +293,7 @@ namespace RitmsHub.Scripts
                 }
             });
             Console.WriteLine("\n");
-            DynamicsCrmUtility.LogMessage($"Excel file created successfully at {filePath}");
+            Console.WriteLine($"Excel file created successfully at {filePath}");
         }
 
         private static async Task<List<UserData>> RetrieveUsersFromBuAsync(IOrganizationService service, string businessUnitName, CancellationToken cancellationToken)
@@ -302,7 +302,7 @@ namespace RitmsHub.Scripts
 
             if (businessUnitId == Guid.Empty)
             {
-                DynamicsCrmUtility.LogMessage($"Business Unit '{businessUnitName}' not found.", "WARNING");
+                Console.WriteLine($"Business Unit '{businessUnitName}' not found.", "WARNING");
                 return new List<UserData>();
             }
 
@@ -339,7 +339,7 @@ namespace RitmsHub.Scripts
 
             if (teamResults.Entities.Count == 0)
             {
-                DynamicsCrmUtility.LogMessage($"Team '{teamName}' not found.", "WARNING");
+                Console.WriteLine($"Team '{teamName}' not found.", "WARNING");
                 return new List<UserData>();
             }
 

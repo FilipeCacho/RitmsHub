@@ -63,8 +63,8 @@ namespace RitmsHub.Scripts
             }
             catch (Exception ex)
             {
-                DynamicsCrmUtility.LogMessage($"An error occurred: {ex.Message}", "ERROR");
-                DynamicsCrmUtility.LogMessage($"Stack Trace: {ex.StackTrace}", "ERROR");
+                Console.WriteLine($"An error occurred: {ex.Message}", "ERROR");
+                Console.WriteLine($"Stack Trace: {ex.StackTrace}", "ERROR");
             }
 
             return results;
@@ -76,7 +76,7 @@ namespace RitmsHub.Scripts
             {
                 ConfigureSecurityProtocol();
                 string connectionString = DynamicsCrmUtility.CreateConnectionString();
-                //DynamicsCrmUtility.LogMessage($"Attempting to connect with: {connectionString}");
+                //Console.WriteLine($"Attempting to connect with: {connectionString}");
 
                 var serviceClient = await Task.Run(() => DynamicsCrmUtility.CreateCrmServiceClient());
 
@@ -89,11 +89,11 @@ namespace RitmsHub.Scripts
                 this._service = serviceClient;
                 this._userRetriever = new UserRetriever(_service);
                 this._permissionCopier = new PermissionCopier(_service);
-                //DynamicsCrmUtility.LogMessage($"Connected successfully to {serviceClient.ConnectedOrgUniqueName}");
+                //Console.WriteLine($"Connected successfully to {serviceClient.ConnectedOrgUniqueName}");
             }
             catch (Exception ex)
             {
-                DynamicsCrmUtility.LogMessage($"An error occurred while connecting to CRM: {ex.Message}", "ERROR");
+                Console.WriteLine($"An error occurred while connecting to CRM: {ex.Message}", "ERROR");
                 throw;
             }
         }
