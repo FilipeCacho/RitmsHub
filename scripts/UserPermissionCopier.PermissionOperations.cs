@@ -29,7 +29,9 @@ namespace RitmsHub.Scripts
                 DisplayComparison(permissionType, sourceInfo, targetInfo);
             }
 
-            Console.Write($"\nDo you want to copy the {permissionType.ToLower()} from the Source User to the Target User? (Y/N): ");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.Write($"\nDo you want to copy the {permissionType.ToLower()} from the Source User to the Target User? (Y/N): \n");
+            Console.ResetColor();
             return Console.ReadLine().Trim().ToUpper() == "Y";
         }
 
